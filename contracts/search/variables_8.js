@@ -1,0 +1,18 @@
+var searchData=
+[
+  ['id_0',['id',['../structonedeposit.html#a6090f86dea75090fce69b5b0368506d9',1,'onedeposit::id()'],['../structonewithdraw.html#a033f67d11f881bbd73de047557918c47',1,'onewithdraw::id()'],['../structbalances__base.html#a2069a54454c59cae6ac2a977002bc8ce',1,'balances_base::id()'],['../structprogwallet.html#a31b4906def8d1a6b37bfd1432787360b',1,'progwallet::id()'],['../structrequest.html#a371bc20bccafbe2d1e4c5b4d62942d93',1,'request::id()'],['../structboards.html#a4902e87f13247db8f837629544f12a6a',1,'boards::id()'],['../structdecision.html#a86975765d5b9f938fa95448b05e2c0c2',1,'decision::id()'],['../structaddress.html#abc8aec5b1bd9fe5715797a8185c5ad52',1,'address::id()'],['../structonedraft.html#afcb9605f6196cfc05fae05641d4c61e1',1,'onedraft::id()'],['../structtranslation.html#abd4eb0141053f4624437fa657c508ece',1,'translation::id()'],['../structfundwallet.html#a6e7afadc2f5184566173602aa2cdd5ef',1,'fundwallet::id()'],['../structaccfund.html#ae6e3746ffcdbee94066bc40632fcc37e',1,'accfund::id()'],['../structexpfund.html#a8293562593e2dbdd8984361d5d1caa10',1,'expfund::id()'],['../structfwithdraw.html#aec424f3556b3d87140abdc6e32fb22cb',1,'fwithdraw::id()'],['../structprogcomarket.html#a70a4d09612198f1e70dc392965a7adf8',1,'progcomarket::id()'],['../structautomator.html#a9389163367c7579bd9725a83bb27cef6',1,'automator::id()'],['../structjoincoops.html#ac4a3e9cdd6ef21101afeae01c2ed2be1',1,'joincoops::id()'],['../structchanges.html#a0c37e4322ad12ebbb02e2f3d68a0aadd',1,'changes::id()'],['../structeosiosystem_1_1powerup__order.html#a0c852ce9dc447d27818c6f76c9966f5b',1,'eosiosystem::powerup_order::id()']]],
+  ['images_1',['images',['../structprogcomarket.html#ac6006d3e095260e4762a0d1ac98cd2c8',1,'progcomarket']]],
+  ['initial_2',['initial',['../structorg__data.html#a46f196bb722c9e9218cb972193a676ff',1,'org_data::initial()'],['../structorganization.html#a64af4e3da71dfad7ec38e3457a716b95',1,'organization::initial()']]],
+  ['is_5factive_3',['is_active',['../structprogcomarket.html#ac6b384389548125020788aa7dfc80c76',1,'progcomarket::is_active()'],['../structeosiosystem_1_1producer__info.html#a1e99c8edf840eef65937a55e81a96b50',1,'eosiosystem::producer_info::is_active()']]],
+  ['is_5fbranched_4',['is_branched',['../structorganization.html#af5c05911588847c430a56389d12e5ce3',1,'organization']]],
+  ['is_5fcooperative_5',['is_cooperative',['../structorg__data.html#a73a9e2d8573545f8852ff0dda1c860e5',1,'org_data::is_cooperative()'],['../structorganization.html#a55e8a7cd344e8b216bf959428a2a15d3',1,'organization::is_cooperative()']]],
+  ['is_5fenrolled_6',['is_enrolled',['../structorganization.html#aba08abfe3dab64cb2120c944e8f43693',1,'organization']]],
+  ['is_5finitial_7',['is_initial',['../structparticipants.html#a9172b4ea5fa9b858be1a2ca24d467c31',1,'participants']]],
+  ['is_5fminimum_8',['is_minimum',['../structparticipants.html#adb615a78b2bf2c4ea428289a6af5f64c',1,'participants']]],
+  ['is_5fpaid_9',['is_paid',['../structjoincoops.html#ad10d6d51a81f467d3827bded4b0cebcd',1,'joincoops']]],
+  ['is_5fproxy_10',['is_proxy',['../structeosiosystem_1_1voter__info.html#aee50442b79d5561a967486e6b7a61e65',1,'eosiosystem::voter_info']]],
+  ['is_5fverified_11',['is_verified',['../structverification.html#aeb6702bd4b7903963252735d6f760c50',1,'verification']]],
+  ['is_5fvoting_12',['is_voting',['../structboard__member.html#a20b8902343fc67a6f8a0665a4e40b330',1,'board_member']]],
+  ['is_5fwarranty_5freturn_13',['is_warranty_return',['../structrequest.html#aedf6c4bfda54e8f437d7e17cbea181e6',1,'request']]],
+  ['issuer_14',['issuer',['../structeosio_1_1token_1_1currency__stats.html#a98c87418ed2e156ca2bd94a8e51a0b9f',1,'eosio::token::currency_stats']]]
+];
