@@ -1,0 +1,8 @@
+{
+	"scripts": {
+	  "docs-publish": "pnpm gh-pages --nojekyll -d site --repo git@github.com:coopenomics/docs.git"
+	},
+	"dependencies": {
+		"gh-pages": "^6.1.1"
+	}
+}

@@ -1,0 +1,124 @@
+site_name: Цифровой Кошелёк
+
+theme:
+  name: material
+  features:
+    - content.code.copy
+    
+  # custom_dir: overrides
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+      primary: black
+      accent: teal
+
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+      primary: black
+      accent: teal
+  
+  logo: assets/logo-white.png
+
+  language: ru
+  features:
+    - navigation.path
+    - navigation.tabs
+    - navigation.sections
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.expand
+    # - toc.follow
+    # - toc.integrate
+    - search.share
+    - navigation.top
+    - navigation.footer
+    
+#repo_url: https://github.com/coopenomics
+
+plugins:
+  - search
+  - section-index
+  # - awesome-pages
+  # - table-reader
+  - blog
+  # - social:https://squidfunk.github.io/mkdocs-material/
+  #   cards_layout: default
+
+  # - literate-nav:
+  # nav_file: SUMMARY.md
+
+extra:
+  homepage: 'doctrine'
+  generator: false
+  # social:
+  #   - icon: fontawesome/brands/telegram
+  #     link: https://twitter.com/your-profile
+
+copyright: ПК «ВОСХОД» &copy; 2024
+
+markdown_extensions:
+  - admonition
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+    # - pymdownx.superfences:
+    #   custom_fences:
+    #     - name: mermaid
+    #       class: mermaid
+    #       format: !!python/name:pymdownx.superfences.fence_code_format
+
+      # custom_fences:
+      #   - name: mermaid
+      #     class: mermaid
+      #     format: !!python/name:pymdownx.superfences.fence_code_format
+
+
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.tabbed:
+      alternate_style: true
+nav:
+  - Доктрина: 
+    - doctrine/index.md
+    - Платформа Поколений: 'doctrine/platforma_pokolenii.md' 
+    - Экономика Знаний: 'doctrine/economica_znanii.md' 
+    - Единое Сознание: 'doctrine/edinoe_soznanie.md'
+    - Управление будущим: 'doctrine/upravlenie_budushim.md'
+    - Операционная система: 'doctrine/operacionnaya_sistema.md'
+    - Потребительская кооперация: 'doctrine/digital_cooperative.md'
+    - Цифровой кошелёк: 'doctrine/digital_wallet.md'
+
+  - Руководство: 
+    - Введение: 'manual/introduction.md' 
+    - Руководителям: 
+      - Регистрация:
+        - 'manual/introduction.md' 
+  #   - Участникам: 
+  #     - 'manual/introduction.md' 
+  - Справка: info.md
+
+  - Протоколы: 
+    - Эмиссии: protocols/emission.md
+  - Разработчикам: documentation.md
+  - Инвесторам: invest.md
+  - Подключение: connect.md
+  - Форум: https://forum.copenomics.world
+  - Контакты: contacts.md
+  - Блог: blog/index.md
+  
+ 
