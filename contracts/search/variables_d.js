@@ -1,4 +1,0 @@
-var searchData=
-[
-  ['owner_0',['owner',['../structeosiobios_1_1bios_1_1abi__hash.html#a9192f39fbb92a8ef905d1f28056e904d',1,'eosiobios::bios::abi_hash::owner()'],['../structeosiosystem_1_1producer__info.html#a8e7b745ce26e291c9bb6c01197b39481',1,'eosiosystem::producer_info::owner()'],['../structeosiosystem_1_1voter__info.html#a09e1d98da6939690519ea85baedf1c01',1,'eosiosystem::voter_info::owner()'],['../structeosiosystem_1_1user__resources.html#a8a373411ce7eb180649f9a7c938fb7dd',1,'eosiosystem::user_resources::owner()'],['../structeosiosystem_1_1refund__request.html#a11e5c7ef5cc00904a0d00bf0af8900ef',1,'eosiosystem::refund_request::owner()'],['../structeosiosystem_1_1powerup__order.html#a7367e434fe5c04cc3eea0a4e79d925f4',1,'eosiosystem::powerup_order::owner()'],['../structeosiosystem_1_1abi__hash.html#a4fb47566cda77ad38ad41fcf4fa3616d',1,'eosiosystem::abi_hash::owner()']]]
-];
