@@ -24,5 +24,5 @@ rsync -r docs/* ../../../docs/site/coopback
 # Возвращаемся в первоначальную директорию и публикуем документацию
 cd ../../../docs || exit
 echo pwd
-# pnpm docs-publish
+pnpm publish
 
