@@ -1,10 +1,7 @@
-site_name: Цифровой Кошелёк
+site_name: Цифровой Кооператив
 
 theme:
   name: material
-  features:
-    - content.code.copy
-    
   # custom_dir: overrides
   palette:
     - scheme: default
@@ -25,19 +22,21 @@ theme:
 
   language: ru
   features:
+    - content.code.copy
     - navigation.path
-    - navigation.tabs
+    # - navigation.tabs
     - navigation.sections
     - navigation.instant
     - navigation.instant.prefetch
     - navigation.expand
-    # - toc.follow
+    - navigation.indexes
+    - toc.follow
     # - toc.integrate
     - search.share
     - navigation.top
     - navigation.footer
     
-#repo_url: https://github.com/coopenomics
+repo_url: https://github.com/coopenomics
 
 plugins:
   - search
@@ -51,8 +50,11 @@ plugins:
   # - literate-nav:
   # nav_file: SUMMARY.md
 
+extra_css:
+  - css/extra.css
+
 extra:
-  homepage: 'doctrine'
+  # homepage: 'doctrine'
   generator: false
   # social:
   #   - icon: fontawesome/brands/telegram
@@ -93,32 +95,89 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
 nav:
-  - Доктрина: 
-    - doctrine/index.md
-    - Платформа Поколений: 'doctrine/platforma_pokolenii.md' 
-    - Экономика Знаний: 'doctrine/economica_znanii.md' 
-    - Единое Сознание: 'doctrine/edinoe_soznanie.md'
-    - Управление будущим: 'doctrine/upravlenie_budushim.md'
-    - Операционная система: 'doctrine/operacionnaya_sistema.md'
-    - Потребительская кооперация: 'doctrine/digital_cooperative.md'
-    - Цифровой кошелёк: 'doctrine/digital_wallet.md'
+    
+  # - Доктрина: doctrine/index.md
+  #   - Платформа Поколений: 'doctrine/platforma_pokolenii.md' 
+  #   - Экономика Знаний: 'doctrine/economica_znanii.md' 
+  #   - Единое Сознание: 'doctrine/edinoe_soznanie.md'
+  #   - Управление будущим: 'doctrine/upravlenie_budushim.md'
+  #   - Операционная система: 'doctrine/operacionnaya_sistema.md'
+  #   - Потребительская кооперация: 'doctrine/digital_cooperative.md'
+  #   - Цифровой кошелёк: 'doctrine/digital_wallet.md'
+  - Введение: index.md
+  - Кооперативная Экономика: coopenomics.md
+  - Демо-версия: testnet.md
+  
+  - Руководителям Кооперативов: 
+    - Подключить Кооператив: connect.md
+    
+    - Настройки Кооператива:
+      - Настройка Совета: manual/settings/soviet.md
+      # - Настройка Администраторов: manual/admins/add.md
+        # - Добавить администратора: manual/admins/add.md
+        # - Удалить администратора: manual/admins/remove.md
+        # - Установить права: manual/admins/rights.md
+      
+      # - Настройка Уполномоченных: manual/settings/branches.md
+      # - Настройка Кооперативных Участков: manual/settings/branches.md
+      # - Настройка Фондов: manual/settings/funds.md
+      # - Настройка Меню: manual/settings/menu.md
+      # - Настройка Внешнего Вида: manual/settings/theme.md
+      # - Настройка Реквизитов: manual/settings/soviet.md
+      # - Настройка Контактов: manual/settings/contacts.md
+      
+    - Собрания Совета:
+      - Объявить собрание: manual/soviet/meet.md
+      - Повестка собрания: manual/soviet/agenda.md
+      - Голосование по повестке: manual/soviet/voting.md
+      - Утверждение протокола: manual/soviet/approve.md
+      - Исполнение решений: manual/soviet/exec.md
+      
+    # - Фонды Кооператива: 
+    #   - Просмотреть участки: manual/decisions/exec.md
+    
+    # - Общие Собрания:
+    #   - Инициировать общее собрание: manual/decision/exec.md
+      
+    
+    - Реестр документов:
+      - Цифровой документ: manual/documents/structure.md
+      - Папки документов: manual/documents/folders.md
+      - Реестр документов: manual/documents/look.md
+      # - Проверить документ: manual/documents/check.md
+      
+            
+    - Реестр пайщиков: 
+      - Папка пайщика: manual/participants/folders.md
+      - Просмотреть реестр пайщиков: 'manual/participants/search.md'
+      # - Добавить пайщика: 'manual/participants/add.md'
+      # - Редактировать пайщика: 'manual/participants/edit.md'
 
-  - Руководство: 
-    - Введение: 'manual/introduction.md' 
-    - Руководителям: 
-      - Регистрация:
-        - 'manual/introduction.md' 
+    # - Реестр платежей: 
+    #   - Просмотреть реестр: 'manual/participants/search.md'
+    #   - Принять взнос: 'manual/participants/add.md'
+    #   - Совершить возврат: 'manual/participants/edit.md'
+      
+    
+  - Пайщикам Кооперативов: 
+    - Вступить в кооператив: 'manual/participate/registration.md' 
+  #   - Совершить паевый взнос: 'manual/participate/index.md' 
+  #   - Получить возврат паевого взноса: 'manual/participate/index.md' 
+  #   - Участвовать в целевых потребительских программах:
+  #     - Соседи: 'manual/participate/index.md' 
+  
+  - Разработчикам Кооперативов: 
+    - API-документация: documentation.md
+  
   #   - Участникам: 
   #     - 'manual/introduction.md' 
-  - Справка: info.md
+  # - Справка: info.md
 
-  - Протоколы: 
-    - Эмиссии: protocols/emission.md
-  - Разработчикам: documentation.md
-  - Инвесторам: invest.md
-  - Подключение: connect.md
+  # - Разработчикам: documentation.md
+  # - Инвесторам: invest.md
+  
   - Форум: https://forum.copenomics.world
   - Контакты: contacts.md
-  - Блог: blog/index.md
+  # - Блог: blog/index.md
   
  
