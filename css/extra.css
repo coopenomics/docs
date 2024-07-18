@@ -1,0 +1,9 @@
+.responsive-image img {
+  width: 50%; /* По умолчанию 1/2 */
+}
+
+@media (max-width: 768px) { /* Для мобильных устройств */
+  .responsive-image img {
+    width: 100%;
+  }
+}
