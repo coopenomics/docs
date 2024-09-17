@@ -106,10 +106,10 @@ nav:
   #   - Цифровой кошелёк: 'doctrine/digital_wallet.md'
   - Введение: index.md
   - Кооперативная Экономика: coopenomics.md
-  - Демо-версия: testnet.md
-  
-  - Руководителям Кооперативов: 
-    - Подключить Кооператив: connect.md
+  # - Демо-версия: testnet.md
+  - Подключить Кооператив: connect.md
+  - Руководителям: 
+    
     
     - Настройки Кооператива:
       - Настройка Совета: manual/settings/soviet.md
@@ -159,16 +159,15 @@ nav:
     #   - Совершить возврат: 'manual/participants/edit.md'
       
     
-  - Пайщикам Кооперативов: 
+  - Пайщикам: 
     - Вступить в кооператив: 'manual/participate/registration.md' 
   #   - Совершить паевый взнос: 'manual/participate/index.md' 
   #   - Получить возврат паевого взноса: 'manual/participate/index.md' 
   #   - Участвовать в целевых потребительских программах:
   #     - Соседи: 'manual/participate/index.md' 
   
-  - Разработчикам Кооперативов: 
-    - API-документация: documentation.md
-  
+  - Документация: documentation.md
+    
   #   - Участникам: 
   #     - 'manual/introduction.md' 
   # - Справка: info.md

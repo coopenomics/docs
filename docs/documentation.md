@@ -90,8 +90,8 @@ __Запуск из контейнера__
 mkdir $HOME/blockchain
 mkdir $HOME/blockchain/config
 mkdir $HOME/blockchain/eosio-wallet
-``` 
 
+``` 
 Создаём файл конфига
 ```
 touch $HOME/blockchain/config/config.ini
