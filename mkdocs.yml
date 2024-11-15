@@ -2,7 +2,7 @@ site_name: Цифровой Кооператив
 
 theme:
   name: material
-  # custom_dir: overrides
+  custom_dir: overrides
   palette:
     - scheme: default
       toggle:
@@ -24,7 +24,7 @@ theme:
   features:
     - content.code.copy
     - navigation.path
-    # - navigation.tabs
+    - navigation.tabs
     - navigation.sections
     - navigation.instant
     - navigation.instant.prefetch
@@ -52,7 +52,7 @@ plugins:
 
 extra_css:
   - css/extra.css
-
+  
 extra:
   # homepage: 'doctrine'
   generator: false
