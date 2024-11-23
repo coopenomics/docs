@@ -105,9 +105,9 @@ nav:
   #   - Потребительская кооперация: 'doctrine/digital_cooperative.md'
   #   - Цифровой кошелёк: 'doctrine/digital_wallet.md'
   - Введение: index.md
-  - Кооперативная Экономика: coopenomics.md
+  
   # - Демо-версия: testnet.md
-  - Подключить Кооператив: connect.md
+  # - Подключить Кооператив: connect.md
   - Руководителям: 
     
     
@@ -175,7 +175,8 @@ nav:
   # - Разработчикам: documentation.md
   # - Инвесторам: invest.md
   
-  - Форум: https://forum.copenomics.world
+  # - Форум: https://forum.copenomics.world
+  - Платформа: https://coopenomics.world/platform
   - Контакты: contacts.md
   # - Блог: blog/index.md
   

@@ -16,13 +16,13 @@ mkdocs build
 # rsync -r docs/* ../docs/site/cooptypes
 
 # Переключаемся в директорию coopback, генерируем документацию и копируем
-cd ../monocoop/components/coopback || exit
-pnpm run docs
-mkdir -p ../../../docs/site/coopback
-rsync -r docs/* ../../../docs/site/coopback
+# cd ../monocoop/components/coopback || exit
+# pnpm run docs
+# mkdir -p ../../../docs/site/coopback
+# rsync -r docs/* ../../../docs/site/coopback
 
 # Возвращаемся в первоначальную директорию и публикуем документацию
-cd ../../../docs || exit
-echo pwd
+# cd ../../../docs || exit
+# echo pwd
 pnpm run publish
 
