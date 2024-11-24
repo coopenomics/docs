@@ -1,5 +1,7 @@
 site_name: Цифровой Кооператив
-
+extra_javascript:
+  - js/metrika.js
+  
 theme:
   name: material
   custom_dir: overrides
