@@ -130,7 +130,7 @@ nav:
   - Разработчикам: 
     - Разработчикам: documentation/index.md
     - Как это работает: documentation/howitworks.md
-    # - Архитектура!: documentation/architecture.md
+    - Архитектура: documentation/architecture.md
     - Язык API: documentation/graphql.md
     - SDK-клиент: documentation/sdk.md
     - Установка: documentation/install.md
