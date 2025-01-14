@@ -38,10 +38,11 @@ theme:
     - navigation.top
     - navigation.footer
     
-repo_url: https://github.com/coopenomics
+repo_url: https://github.com/coopenomics/mono
 
 plugins:
   - search
+  - macros
   - section-index
   # - awesome-pages
   # - table-reader
@@ -49,20 +50,16 @@ plugins:
   # - social:https://squidfunk.github.io/mkdocs-material/
   #   cards_layout: default
 
-  # - literate-nav:
-  # nav_file: SUMMARY.md
-
 extra_css:
   - css/extra.css
   
 extra:
-  # homepage: 'doctrine'
   generator: false
   # social:
   #   - icon: fontawesome/brands/telegram
   #     link: https://twitter.com/your-profile
 
-copyright: ПК «ВОСХОД» &copy; 2024
+copyright: ПК «ВОСХОД» &copy; 2025
 
 markdown_extensions:
   - admonition
@@ -75,17 +72,6 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-    # - pymdownx.superfences:
-    #   custom_fences:
-    #     - name: mermaid
-    #       class: mermaid
-    #       format: !!python/name:pymdownx.superfences.fence_code_format
-
-      # custom_fences:
-      #   - name: mermaid
-      #     class: mermaid
-      #     format: !!python/name:pymdownx.superfences.fence_code_format
-
 
   - attr_list
   - pymdownx.emoji:
@@ -96,23 +82,9 @@ markdown_extensions:
       permalink: true
   - pymdownx.tabbed:
       alternate_style: true
-nav:
-    
-  # - Доктрина: doctrine/index.md
-  #   - Платформа Поколений: 'doctrine/platforma_pokolenii.md' 
-  #   - Экономика Знаний: 'doctrine/economica_znanii.md' 
-  #   - Единое Сознание: 'doctrine/edinoe_soznanie.md'
-  #   - Управление будущим: 'doctrine/upravlenie_budushim.md'
-  #   - Операционная система: 'doctrine/operacionnaya_sistema.md'
-  #   - Потребительская кооперация: 'doctrine/digital_cooperative.md'
-  #   - Цифровой кошелёк: 'doctrine/digital_wallet.md'
+nav:  
   - Введение: index.md
-  
-  # - Демо-версия: testnet.md
-  # - Подключить Кооператив: connect.md
   - Руководителям: 
-    
-    
     - Настройки Кооператива:
       - Настройка Совета: manual/settings/soviet.md
       # - Настройка Администраторов: manual/admins/add.md
@@ -141,45 +113,49 @@ nav:
     # - Общие Собрания:
     #   - Инициировать общее собрание: manual/decision/exec.md
       
-    
     - Реестр документов:
       - Цифровой документ: manual/documents/structure.md
       - Папки документов: manual/documents/folders.md
       - Реестр документов: manual/documents/look.md
       # - Проверить документ: manual/documents/check.md
-      
             
     - Реестр пайщиков: 
       - Папка пайщика: manual/participants/folders.md
       - Просмотреть реестр пайщиков: 'manual/participants/search.md'
-      # - Добавить пайщика: 'manual/participants/add.md'
-      # - Редактировать пайщика: 'manual/participants/edit.md'
-
-    # - Реестр платежей: 
-    #   - Просмотреть реестр: 'manual/participants/search.md'
-    #   - Принять взнос: 'manual/participants/add.md'
-    #   - Совершить возврат: 'manual/participants/edit.md'
-      
     
   - Пайщикам: 
-    - Вступить в кооператив: 'manual/participate/registration.md' 
-  #   - Совершить паевый взнос: 'manual/participate/index.md' 
-  #   - Получить возврат паевого взноса: 'manual/participate/index.md' 
-  #   - Участвовать в целевых потребительских программах:
-  #     - Соседи: 'manual/participate/index.md' 
+    - Вступить в кооператив: 'participants/registration.md' 
+    - Восстановление ключа: 'participants/restore.md' 
   
-  - Документация: documentation.md
+  - Разработчикам: 
+    - Разработчикам: documentation/index.md
+    - Как это работает: documentation/howitworks.md
+    # - Архитектура!: documentation/architecture.md
+    - Язык API: documentation/graphql.md
+    - SDK-клиент: documentation/sdk.md
+    - Установка: documentation/install.md
+    - Подключение: documentation/connect.md
+    - Кооператив: documentation/system.md
+    - Аккаунты: documentation/accounts.md
+    - Аудентификация: documentation/auth.md
+    - Пайщики: documentation/participants.md
+    - Соглашения: documentation/agreements.md
+    - Кошелёк: documentation/wallet.md
+    - Платежи и взносы: documentation/payments.md
+    - Методы платежа: documentation/payment-methods.md
+    - Решения: documentation/decisions.md
+    - Целевые программы: documentation/programs.md
+    - Документы: documentation/documents.md
+    - Кооперативные участки: documentation/branches.md
+    - Фонды: documentation/funds.md
+    - Расширения: documentation/extensions.md
     
-  #   - Участникам: 
-  #     - 'manual/introduction.md' 
-  # - Справка: info.md
-
-  # - Разработчикам: documentation.md
-  # - Инвесторам: invest.md
-  
-  # - Форум: https://forum.copenomics.world
-  - Платформа: https://coopenomics.world/platform
+    # - 🔗 SDK Docs: /sdk
+    # - 🔗 GraphQL-API Docs: /graphql
+    # - Документы: documentation/registration.md
+    # - Платежи: documentation/registration.md
+    # - Пайщики: documentation/registration.md
+  # - Подключение: connect.md
   - Контакты: contacts.md
-  # - Блог: blog/index.md
   
  
