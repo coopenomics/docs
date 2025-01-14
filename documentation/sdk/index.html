@@ -1215,6 +1215,15 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
+      Установка
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
       Как пользоваться
     </span>
   </a>
@@ -1223,7 +1232,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       Запросы
     </span>
@@ -1232,7 +1241,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       Мутации
     </span>
@@ -1241,7 +1250,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       Классы
     </span>
@@ -1250,7 +1259,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       Системное пространство
     </span>
@@ -1662,6 +1671,15 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
+      Установка
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
       Как пользоваться
     </span>
   </a>
@@ -1670,7 +1688,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       Запросы
     </span>
@@ -1679,7 +1697,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       Мутации
     </span>
@@ -1688,7 +1706,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       Классы
     </span>
@@ -1697,7 +1715,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       Системное пространство
     </span>
@@ -1733,7 +1751,14 @@
 <p>Для удобства разработки доступен <a href="/sdk">SDK-клиент</a>, который обеспечивает удобный программный доступ к запросам, мутациям и подпискам <a href="/graphql">GraphQL-API</a> с типизацией входных и выходных данных на TypeScript. Он упрощает программное взаимодействие с MONO, делая интеграцию максимально простой. В настоящий момент <a href="/sdk">SDK-клиент</a> доступен только на TypeScript. Если ваш проект использует другой язык, вам потребуется обратиться к документации <a href="/graphql">GraphQL-API</a> и создать собственный клиент на основе предоставленных схем данных.</p>
 <p><a href="/sdk">SDK</a> реализует структурированное пространство имён запросов, мутаций, подписок, и классов, необходимых для взаимодействия с <code>MONO</code>. Основная цель SDK - предоставить инструменты для разработчиков, которые предельно упростят интеграцию с <code>MONO</code> и <a href="https://coopenomics.world">Кооперативной Экономикой</a>.</p>
 <p><a href="/sdk">SDK</a> основан на гененаторе <a href="https://github.com/graphql-editor/graphql-zeus">GraphQL-Zeus</a>, который на основании схемы данных <a href="/graphql">GraphQL-API</a> генерирует типизированный клиент доступа, упрощающий разработку и интеграцию с <code>MONO</code>. </p>
-<h2 id="_1">Как пользоваться<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">Установка<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>pnpm<span class="w"> </span>install<span class="w"> </span>@coopenomics/sdk
+
+//<span class="w"> </span>или<span class="w"> </span>
+
+yarn<span class="w"> </span>add<span class="w"> </span>@coopenomics/sdk
+</code></pre></div>
+<h2 id="_2">Как пользоваться<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>Для начала, нам потребуется подключенный к <code>MONO</code> клиент: </p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createClient</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@coopenomics/sdk&#39;</span>
 
@@ -1744,12 +1769,15 @@
 <span class="w">  </span><span class="nx">chain_id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;6e37f9ac0f0ea717bfdbf57d1dd5d7f0e2d773227d9659a63bbf86eec0326c1b&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">//идентификатор цепочки публичной сети</span>
 <span class="p">});</span>
 </code></pre></div>
+<div class="admonition note">
+<p>При хостинге у ПК ВОСХОД адрес конечной точки GraphQL будет следующего формата: https://{{ domain }}/backend/v1/graphql, где domain - это имя домена, по которому доступен рабочий стол кооператива. </p>
+</div>
 <p>Созданный клиент обладает встроенными фабриками для вызова мутаций, запросов, и подписок в <code>MONO</code>, а также, методами для работы с блокчейном и цифровой подписью. </p>
 <p>Для аудентификации клиента необходимо токен доступа через вызов метода:</p>
 <div class="highlight"><pre><span></span><code><span class="nx">client</span><span class="p">.</span><span class="nx">setToken</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">token</span><span class="o">&gt;</span><span class="p">)</span>
 </code></pre></div>
 <p>Подробнее о получении токенов доступа смотри раздел <a href="/documentation/auth">Аудентификация</a>.</p>
-<h3 id="_2">Запросы<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="_3">Запросы<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>Для того, чтобы создать запрос на получение информации из <code>MONO</code>, необходимо извлечь его из пространства имён <code>Queries</code>, выбрав соответствующий область. Пространство запроса включает в себя:</p>
 <ul>
 <li>Интерфейс входных данных <code>IInput</code></li>
@@ -1777,7 +1805,7 @@
 </code></pre></div>
 <p>Где <code>Queries.Accounts.GetAccount.name</code> - это имя запроса, по ключу которого в ответе будет типизированный <code>result</code> в соответствии с интерфейсом <code>Queries.Accounts.GetAccount.IOutput</code>, а <code>Queries.Accounts.GetAccount.query</code> - это предварительно сформированный селектор для получения <code>result</code>. </p>
 <p>Таким образом, для выполнения любого запроса необходимо только знать пространство имени в SDK и использовать данные из него для отправки запроса. В <code>role</code> же содержится вспомогательная информация, которая сообщает о том, какая минимальная роль пользователя допустима для совершения запроса. </p>
-<h3 id="_3">Мутации<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_4">Мутации<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>Мутация - это способ изменения данных в <code>MONO</code> через <a href="/graphql">GraphQL-API</a>. Мутации производятся аналогично запросам, для их проведения необходимо извлечь её из пространства имён <code>Mutations</code>, выбрав соответствующую область. Пространство мутации включает в себя:</p>
 <ul>
 <li>Интерфейс входных данных <code>IInput</code></li>
@@ -1805,9 +1833,9 @@
 <span class="p">);</span>
 </code></pre></div>
 Типизированный результат исполнения мутации согласно интерфейсу <code>Mutations.Payments.CreateDepositPayment.IOutput</code> будет возвращен в переменной <code>result</code>. </p>
-<h3 id="_4">Классы<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="_5">Классы<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>Пространство имён классов содержит вспомогательные классы для работы с <code>MONO</code>, например, класс <code>Blockchain</code> отвечает за извлечение таблиц и отправку транзакций в блокчейне, класс <code>Canvas</code> - за извлечение собственноручной подписи пайщика в необходимом формате для <code>MONO</code>, класс <code>Document</code> - обеспечивает вычисление и восстановление цифровой подписи документов, и т.д. и т.п.</p>
-<h3 id="_5">Системное пространство<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="_6">Системное пространство<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>Иногда при создании запросов или выполнении мутаций могут требоваться специализированные списки, которые находятся в пространстве имён <code>Zeus</code>. На примере мутации для изменения статуса платежа:</p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Zeus</span><span class="p">,</span><span class="w"> </span><span class="nx">Mutations</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@coopenomics/sdk&#39;</span>
 
