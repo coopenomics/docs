@@ -1258,15 +1258,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      Системное пространство
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1313,7 +1304,7 @@
         
   
   <span class="md-ellipsis">
-    Подключение
+    Инициализация
   </span>
   
 
@@ -1714,15 +1705,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      Системное пространство
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1748,9 +1730,8 @@
 
   <h1>Обзор SDK</h1>
 
-<p>Для удобства разработки доступен <a href="/sdk">SDK-клиент</a>, который обеспечивает удобный программный доступ к запросам, мутациям и подпискам <a href="/graphql">GraphQL-API</a> с типизацией входных и выходных данных на TypeScript. Он упрощает программное взаимодействие с MONO, делая интеграцию максимально простой. В настоящий момент <a href="/sdk">SDK-клиент</a> доступен только на TypeScript. Если ваш проект использует другой язык, вам потребуется обратиться к документации <a href="/graphql">GraphQL-API</a> и создать собственный клиент на основе предоставленных схем данных.</p>
-<p><a href="/sdk">SDK</a> реализует структурированное пространство имён запросов, мутаций, подписок, и классов, необходимых для взаимодействия с <code>MONO</code>. Основная цель SDK - предоставить инструменты для разработчиков, которые предельно упростят интеграцию с <code>MONO</code> и <a href="https://coopenomics.world">Кооперативной Экономикой</a>.</p>
-<p><a href="/sdk">SDK</a> основан на гененаторе <a href="https://github.com/graphql-editor/graphql-zeus">GraphQL-Zeus</a>, который на основании схемы данных <a href="/graphql">GraphQL-API</a> генерирует типизированный клиент доступа, упрощающий разработку и интеграцию с <code>MONO</code>. </p>
+<p>Для удобства интеграции с <code>MONO</code> доступен <a href="/sdk">SDK-клиент</a>, который обеспечивает структурированный по пространствам имён программный доступ к запросам, мутациям и подпискам <a href="/graphql">GraphQL-API</a>, а также, вспомогательным классам для работы с <code>MONO</code>.</p>
+<p>Все вызовы мутаций, запросов и подписок и ответы строго типизированы в входных и выходных данных на TypeScript. Это упрощает программное взаимодействие с <code>MONO</code>, делая интеграцию максимально простой. В настоящий момент <a href="/sdk">SDK-клиент</a> доступен только на TypeScript. Если ваш проект использует другой язык, вам потребуется обратиться к документации <a href="/graphql">GraphQL-API</a> и создать собственный клиент на основе предоставленных схем данных.</p>
 <h2 id="_1">Установка<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>pnpm<span class="w"> </span>install<span class="w"> </span>@coopenomics/sdk
 
@@ -1759,6 +1740,7 @@
 yarn<span class="w"> </span>add<span class="w"> </span>@coopenomics/sdk
 </code></pre></div>
 <h2 id="_2">Как пользоваться<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><a href="/sdk">SDK</a> основан на гененаторе <a href="https://github.com/graphql-editor/graphql-zeus">GraphQL-Zeus</a>, который на основании схемы данных <a href="/graphql">GraphQL-API</a> генерирует типизированный клиент доступа к <code>MONO</code>. </p>
 <p>Для начала, нам потребуется подключенный к <code>MONO</code> клиент: </p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createClient</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@coopenomics/sdk&#39;</span>
 
@@ -1772,21 +1754,21 @@ yarn<span class="w"> </span>add<span class="w"> </span>@coopenomics/sdk
 <div class="admonition note">
 <p>При хостинге у ПК ВОСХОД адрес конечной точки GraphQL будет следующего формата: https://{{ domain }}/backend/v1/graphql, где domain - это имя домена, по которому доступен рабочий стол кооператива. </p>
 </div>
-<p>Созданный клиент обладает встроенными фабриками для вызова мутаций, запросов, и подписок в <code>MONO</code>, а также, методами для работы с блокчейном и цифровой подписью. </p>
-<p>Для аудентификации клиента необходимо токен доступа через вызов метода:</p>
+<p>Созданный клиент обладает встроенными фабриками для вызова мутаций, запросов, и подписок в <code>MONO</code>. Для аудентификации клиента необходимо токен доступа через вызов метода:</p>
 <div class="highlight"><pre><span></span><code><span class="nx">client</span><span class="p">.</span><span class="nx">setToken</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">token</span><span class="o">&gt;</span><span class="p">)</span>
 </code></pre></div>
 <p>Подробнее о получении токенов доступа смотри раздел <a href="/documentation/auth">Аудентификация</a>.</p>
 <h3 id="_3">Запросы<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>Для того, чтобы создать запрос на получение информации из <code>MONO</code>, необходимо извлечь его из пространства имён <code>Queries</code>, выбрав соответствующий область. Пространство запроса включает в себя:</p>
+<p>Для того, чтобы создать запрос на получение информации из <code>MONO</code>, необходимо извлечь его из пространства имён <code>Queries</code>, выбрав соответствующий область. Пространство каждого запроса включает в себя:</p>
 <ul>
 <li>Интерфейс входных данных <code>IInput</code></li>
 <li>Интерфейс выходных данных <code>IOutput</code></li>
 <li>Селектор запроса <code>query</code></li>
 <li>Имя запроса <code>name</code></li>
-<li>Требуемую роль <code>role</code> для выполнения запроса</li>
 </ul>
-<p>Все запросы выполняются типично в следующем порядке на примере извлечения аккаунта 🛠️ SDK: <a href="/sdk/modules/Queries.Accounts.GetAccount.html">Queries.Accounts.GetAccount</a>:</p>
+<!-- - Требуемую роль `role` для выполнения запроса -->
+
+<p>Просмотреть все доступные пространства имён запросов можно в документации <a href="/sdk">SDK</a>. Все запросы составляются и выполняются типично. Рассмотрим на примере извлечения аккаунта 🛠️ SDK: <a href="/sdk/modules/Queries.Accounts.GetAccount.html">Queries.Accounts.GetAccount</a>:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// импортируем пространство запросов</span>
 <span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Queries</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@coopenomics/sdk&#39;</span>
 
@@ -1803,18 +1785,21 @@ yarn<span class="w"> </span>add<span class="w"> </span>@coopenomics/sdk
 <span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">variables</span><span class="w"> </span><span class="p">}</span>
 <span class="p">);</span>
 </code></pre></div>
-<p>Где <code>Queries.Accounts.GetAccount.name</code> - это имя запроса, по ключу которого в ответе будет типизированный <code>result</code> в соответствии с интерфейсом <code>Queries.Accounts.GetAccount.IOutput</code>, а <code>Queries.Accounts.GetAccount.query</code> - это предварительно сформированный селектор для получения <code>result</code>. </p>
-<p>Таким образом, для выполнения любого запроса необходимо только знать пространство имени в SDK и использовать данные из него для отправки запроса. В <code>role</code> же содержится вспомогательная информация, которая сообщает о том, какая минимальная роль пользователя допустима для совершения запроса. </p>
+<p>Где <code>Queries.Accounts.GetAccount.name</code> - это имя запроса, по ключу которого в ответе будет типизированный <code>result</code> в соответствии с интерфейсом <code>Queries.Accounts.GetAccount.IOutput</code>, а <code>Queries.Accounts.GetAccount.query</code> - это предварительно сформированный селектор, на основании которого выбираются поля переменной результата <code>result</code>. </p>
+<p>Таким образом, для выполнения любого запроса необходимо только знать пространство имени в <code>SDK</code> и использовать данные из него для составления запроса. </p>
+<!-- В `role` же содержится вспомогательная информация, которая сообщает о том, какая минимальная роль пользователя допустима для совершения запроса.  -->
+
 <h3 id="_4">Мутации<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>Мутация - это способ изменения данных в <code>MONO</code> через <a href="/graphql">GraphQL-API</a>. Мутации производятся аналогично запросам, для их проведения необходимо извлечь её из пространства имён <code>Mutations</code>, выбрав соответствующую область. Пространство мутации включает в себя:</p>
+<p>Мутация - это способ изменения данных в <code>MONO</code> через <a href="/graphql">GraphQL-API</a>. Мутации производятся аналогично запросам, для их проведения необходимо извлечь её из пространства имён <code>Mutations</code> - пространство мутации с требуемым именем. Каждое пространство мутации включает в себя:</p>
 <ul>
 <li>Интерфейс входных данных <code>IInput</code></li>
 <li>Интерфейс выходных данных <code>IOutput</code></li>
 <li>Селектор мутации <code>mutation</code></li>
 <li>Имя мутации <code>name</code></li>
-<li>Требуемую роль <code>role</code> для выполнения мутации</li>
 </ul>
-<p>Все запросы выполняются типично в следующем порядке на примере паевого взноса 🛠️ SDK: <a href="/sdk/modules/Mutations.Payments.CreateDepositPayment.html">Mutations.Payments.CreateDepositPayment</a>:</p>
+<!-- - Требуемую роль `role` для выполнения мутации -->
+
+<p>Все мутации выполняются типично в следующем порядке на примере паевого взноса 🛠️ SDK: <a href="/sdk/modules/Mutations.Payments.CreateDepositPayment.html">Mutations.Payments.CreateDepositPayment</a>:</p>
 <p><div class="highlight"><pre><span></span><code><span class="c1">// импортируем пространство мутаций</span>
 <span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Mutations</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@coopenomics/sdk&#39;</span>
 
@@ -1834,23 +1819,55 @@ yarn<span class="w"> </span>add<span class="w"> </span>@coopenomics/sdk
 </code></pre></div>
 Типизированный результат исполнения мутации согласно интерфейсу <code>Mutations.Payments.CreateDepositPayment.IOutput</code> будет возвращен в переменной <code>result</code>. </p>
 <h3 id="_5">Классы<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>Пространство имён классов содержит вспомогательные классы для работы с <code>MONO</code>, например, класс <code>Blockchain</code> отвечает за извлечение таблиц и отправку транзакций в блокчейне, класс <code>Canvas</code> - за извлечение собственноручной подписи пайщика в необходимом формате для <code>MONO</code>, класс <code>Document</code> - обеспечивает вычисление и восстановление цифровой подписи документов, и т.д. и т.п.</p>
-<h3 id="_6">Системное пространство<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p>Иногда при создании запросов или выполнении мутаций могут требоваться специализированные списки, которые находятся в пространстве имён <code>Zeus</code>. На примере мутации для изменения статуса платежа:</p>
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Zeus</span><span class="p">,</span><span class="w"> </span><span class="nx">Mutations</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@coopenomics/sdk&#39;</span>
+<p>Пространство имён классов содержит вспомогательные классы для работы с <code>MONO</code>. Доступ к классам осуществляется через пространство имён <code>Classes</code> на примере класса <code>Canvas</code> для извлечения собственноручной подписи пайщика:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Classes</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@coopenomics/sdk&#39;</span>
+
+<span class="c1">//контейнер для собственноручной подписи пайщика</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">container</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;signature-container&#39;</span><span class="p">)</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">HTMLElement</span>
+
+<span class="c1">//используем вспомогательный класс Canvas</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">signatureCanvas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Canvas</span><span class="p">(</span><span class="nx">container</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">lineWidth</span><span class="o">:</span><span class="w"> </span><span class="kt">5</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">strokeStyle</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#000&#39;</span><span class="p">,</span>
+<span class="p">})</span>
+
+<span class="c1">// ... </span>
+<span class="c1">// Извлечение подписи в формате base64</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">signature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">signatureCanvas</span><span class="p">.</span><span class="nx">getSignature</span><span class="p">()</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Подпись в формате base64:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">signature</span><span class="p">)</span>
+
+<span class="sb">````</span>
+
+<span class="nx">Доступные</span><span class="w"> </span><span class="nx">на</span><span class="w"> </span><span class="nx">текущий</span><span class="w"> </span><span class="nx">момент</span><span class="w"> </span><span class="nx">вспомогательные</span><span class="w"> </span><span class="nx">классы</span><span class="w"> </span><span class="nx">пространства</span><span class="w"> </span><span class="nx">имён</span><span class="w"> </span><span class="nx">Classes</span><span class="o">:</span>
+
+<span class="kt">__</span><span class="sb">`Blockchain`</span><span class="nx">__</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">отвечает</span><span class="w"> </span><span class="nx">за</span><span class="w"> </span><span class="nx">извлечение</span><span class="w"> </span><span class="nx">таблиц</span><span class="w"> </span><span class="nx">из</span><span class="w"> </span><span class="nx">блокчейна</span><span class="w"> </span><span class="nx">и</span><span class="w"> </span><span class="nx">отправку</span><span class="w"> </span><span class="nx">транзакций</span><span class="w"> </span><span class="nx">в</span><span class="w"> </span><span class="nx">блокчейн</span><span class="p">.</span>
+<span class="nx">__</span><span class="sb">`Canvas`</span><span class="nx">__</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">за</span><span class="w"> </span><span class="nx">извлечение</span><span class="w"> </span><span class="nx">собственноручной</span><span class="w"> </span><span class="nx">подписи</span><span class="w"> </span><span class="nx">пайщика</span><span class="w"> </span><span class="nx">в</span><span class="w"> </span><span class="nx">необходимом</span><span class="w"> </span><span class="nx">формате</span><span class="w"> </span><span class="nx">для</span><span class="w"> </span><span class="sb">`MONO`</span>
+<span class="nx">__</span><span class="sb">`Document`</span><span class="nx">__</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">за</span><span class="w"> </span><span class="nx">вычисление</span><span class="w"> </span><span class="nx">и</span><span class="w"> </span><span class="nx">восстановление</span><span class="w"> </span><span class="nx">цифровой</span><span class="w"> </span><span class="nx">подписи</span><span class="w"> </span><span class="nx">документов</span>
 
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">variables</span><span class="o">:</span><span class="w"> </span><span class="kt">Mutations.Payments.SetPaymentStatus.IInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Идентификатор платежа, для которого устанавливается статус</span>
-<span class="w">    </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="kt">Zeus.PaymentStatus.PAID</span><span class="p">;</span><span class="w"> </span><span class="c1">// используем список статусов платежей для указания оплаченного платежа</span>
-<span class="w">  </span><span class="p">};</span>
-<span class="p">};</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">[</span><span class="nx">Mutations</span><span class="p">.</span><span class="nx">Payments</span><span class="p">.</span><span class="nx">SetPaymentStatus</span><span class="p">.</span><span class="nx">name</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">Mutation</span><span class="p">(</span>
-<span class="w">  </span><span class="nx">Mutations</span><span class="p">.</span><span class="nx">Payments</span><span class="p">.</span><span class="nx">SetPaymentStatus</span><span class="p">.</span><span class="nx">mutation</span><span class="p">,</span>
-<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">variables</span><span class="w"> </span><span class="p">}</span>
-<span class="p">);</span>
+<span class="err">###</span><span class="w"> </span><span class="nx">Системное</span><span class="w"> </span><span class="nx">пространство</span>
+
+<span class="nx">Иногда</span><span class="w"> </span><span class="nx">при</span><span class="w"> </span><span class="nx">создании</span><span class="w"> </span><span class="nx">запросов</span><span class="w"> </span><span class="nx">или</span><span class="w"> </span><span class="nx">выполнении</span><span class="w"> </span><span class="nx">мутаций</span><span class="w"> </span><span class="nx">могут</span><span class="w"> </span><span class="nx">требоваться</span><span class="w"> </span><span class="nx">специализированные</span><span class="w"> </span><span class="nx">списки</span><span class="w"> </span><span class="nx">или</span><span class="w"> </span><span class="nx">типы</span><span class="w"> </span><span class="nx">данных</span><span class="w"> </span><span class="sb">`MONO`</span><span class="p">,</span><span class="w"> </span><span class="nx">которые</span><span class="w"> </span><span class="nx">находятся</span><span class="w"> </span><span class="nx">в</span><span class="w"> </span><span class="nx">пространстве</span><span class="w"> </span><span class="nx">имён</span><span class="w"> </span><span class="sb">`Zeus`</span><span class="p">,</span><span class="w"> </span><span class="nx">т</span><span class="p">.</span><span class="nx">к</span><span class="p">.</span><span class="w"> </span><span class="nx">генерируются</span><span class="w"> </span><span class="nx">автоматически</span><span class="w"> </span><span class="nx">с</span><span class="w"> </span><span class="nx">использованием</span><span class="w"> </span><span class="nx">GraphQL</span><span class="o">-</span><span class="nx">Zeus</span><span class="p">.</span><span class="w"> </span>
+
+<span class="nx">На</span><span class="w"> </span><span class="nx">примере</span><span class="w"> </span><span class="nx">мутации</span><span class="w"> </span><span class="nx">для</span><span class="w"> </span><span class="nx">изменения</span><span class="w"> </span><span class="nx">статуса</span><span class="w"> </span><span class="nx">платежа</span><span class="o">:</span>
+
+<span class="sb">```ts</span>
+<span class="sb">import { Zeus, Mutations } from &#39;@coopenomics/sdk&#39;</span>
+
+
+<span class="sb">const variables: Mutations.Payments.SetPaymentStatus.IInput = {</span>
+<span class="sb">  data: {</span>
+<span class="sb">    id: &lt;string&gt;; // Идентификатор платежа, для которого устанавливается статус</span>
+<span class="sb">    status: Zeus.PaymentStatus.PAID; // используем список статусов платежей для указания оплаченного платежа</span>
+<span class="sb">  };</span>
+<span class="sb">};</span>
+
+<span class="sb">const { [Mutations.Payments.SetPaymentStatus.name]: result } = await client.Mutation(</span>
+<span class="sb">  Mutations.Payments.SetPaymentStatus.mutation,</span>
+<span class="sb">  { variables }</span>
+<span class="sb">);</span>
 </code></pre></div>
 <p>Полный набор списков доступен в документации <a href="/documentation/sdk">SDK</a> в пространстве имён Zeus. </p>
 

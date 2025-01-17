@@ -1198,8 +1198,17 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Установка
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1210,6 +1219,32 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Установка
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1227,7 +1262,7 @@
         
   
   <span class="md-ellipsis">
-    Подключение
+    Инициализация
   </span>
   
 
@@ -1575,8 +1610,23 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Установка
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1594,8 +1644,11 @@
   
 
 
-<h1 id="_1">Полный установка<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>Для старта MONO склонируйте репозиторий:</p>
+  <h1>Установка</h1>
+
+<p>Полная установка <code>MONO</code> вам потребуется, если вы самостоятельно подключаетесь к <a href="https://coopenomics.world">Кооперативной Экономике</a> с использованием своего собственного сервера. Если же хостинг <code>MONO</code> осуществляется в ПК ВОСХОД для вашего кооператива, то установка и сервер вам не потребуется. </p>
+<h2 id="_1">Установка<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Склонируйте репозиторий:</p>
 <div class="highlight"><pre><span></span><code>git clone https://github.com/coopenomics/mono
 </code></pre></div>
 <p>Выполните установку пакетов:</p>
@@ -1612,8 +1665,10 @@ pnpm install
 <div class="highlight"><pre><span></span><code>cp components/cooparser/.env-example components/cooparser/.env
 </code></pre></div></p>
 <p>Настройте переменные окружения во всех скопированных конфигурационных файлах. </p>
-<div class="admonition note"></div>
+<div class="admonition note">
+<p class="admonition-title">API блокчейна</p>
 <p>При подключении к тестовой среде использовать следующие конечные точки блокчейна: https://api-testnet.coopenomics.world, при работе с производственной сетью: https://api.coopenomics.world</p>
+</div>
 <p>После конфигурации произведите сборку MONO из корня:</p>
 <div class="highlight"><pre><span></span><code>pnpm run build
 </code></pre></div>
@@ -1673,13 +1728,13 @@ pnpm install
         
         
           
-          <a href="../connect/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Подключение">
+          <a href="../connect/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Инициализация">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Вперед
               </span>
               <div class="md-ellipsis">
-                Подключение
+                Инициализация
               </div>
             </div>
             <div class="md-footer__button md-icon">
