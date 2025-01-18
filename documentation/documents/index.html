@@ -1510,10 +1510,43 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Процесс генерации и подписания документа">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Инициирующее действие
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Подпись документа
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Публикация в блокчейне
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       Пакет документов
     </span>
@@ -1522,7 +1555,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       Статусы документов
     </span>
@@ -1540,7 +1573,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       Связанные документы
     </span>
@@ -1549,7 +1582,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       Получить список пакетов документов
     </span>
@@ -1705,10 +1738,43 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Процесс генерации и подписания документа">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Инициирующее действие
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Подпись документа
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Публикация в блокчейне
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       Пакет документов
     </span>
@@ -1717,7 +1783,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       Статусы документов
     </span>
@@ -1735,7 +1801,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       Связанные документы
     </span>
@@ -1744,7 +1810,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       Получить список пакетов документов
     </span>
@@ -1794,7 +1860,7 @@
 <span class="w">  </span><span class="nx">hash</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w">         </span><span class="c1">// Хэш-сумма подписанного PDF-документа</span>
 <span class="w">  </span><span class="nx">signature</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w">    </span><span class="c1">// Подпись хэш-суммы</span>
 <span class="w">  </span><span class="nx">public_key</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w">   </span><span class="c1">// Публичный ключ, которым подписан документ</span>
-<span class="w">  </span><span class="nx">meta</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w">         </span><span class="c1">// Строка с JSON-объектом мета-информации о документе</span>
+<span class="w">  </span><span class="nx">meta</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">object</span><span class="o">&gt;</span><span class="w">         </span><span class="c1">// Строка с JSON-объектом мета-информации о документе</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Где <code>hash</code> - позволяет однозначно идентифицировать документ, <code>signature</code> и <code>public_key</code> обеспечивают криптографическую верификацию подлинности подписи, а <code>meta</code> содержит дополнительную информацию (в формате JSON), позволяющую в будущем восстановить содержание документа (используя данные из внутренней базы MONO).</p>
@@ -1812,8 +1878,35 @@
     M-&gt;&gt;BC: 3) Публикует ISignedDocument&lt;br/&gt;(hash, signature, public_key, meta)
     BC--&gt;&gt;M: Извлекает и сохраняет публичные данные (хэш и пр.)
 </code></pre>
-<p><code>1. Инициирующее действие (заявление)</code></p>
-<p>Пользователь инициирует процесс, вызывая мутацию с префиксом Generate. </p>
+<h3 id="_4">Инициирующее действие<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>Пользователь инициирует процесс, вызывая мутацию с префиксом Generate. На примере генерации ползовательского соглашения:</p>
+<p>🛠️ SDK: <a href="/sdk/modules/Mutations.Agreements.GenerateUserAgreement.html">Mutations.Agreements.GenerateUserAgreement</a></p>
+<p>На примере подписи пользовательского соглашения 🛠️ SDK: <a href="/sdk/modules/Mutations.Agreements.GenerateUserAgreement.html">Mutations.Agreements.GenerateUserAgreement</a>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Mutations</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@coopenomics/sdk&#39;</span><span class="p">;</span><span class="w"> </span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">variables</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">block_num</span><span class="o">?:</span><span class="w"> </span><span class="o">&lt;</span><span class="kc">null</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">number</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Номер блока, на котором был создан документ</span>
+<span class="w">    </span><span class="nx">coopname</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Название кооператива, связанное с документом</span>
+<span class="w">    </span><span class="nx">created_at</span><span class="o">?:</span><span class="w"> </span><span class="o">&lt;</span><span class="kc">null</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Дата и время создания документа</span>
+<span class="w">    </span><span class="nx">generator</span><span class="o">?:</span><span class="w"> </span><span class="o">&lt;</span><span class="kc">null</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Имя генератора, использованного для создания документа</span>
+<span class="w">    </span><span class="nx">lang</span><span class="o">?:</span><span class="w"> </span><span class="o">&lt;</span><span class="kc">null</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Язык документа</span>
+<span class="w">    </span><span class="nx">links</span><span class="o">?:</span><span class="w"> </span><span class="o">&lt;</span><span class="kc">null</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Ссылки, связанные с документом</span>
+<span class="w">    </span><span class="nx">timezone</span><span class="o">?:</span><span class="w"> </span><span class="o">&lt;</span><span class="kc">null</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Часовой пояс, в котором был создан документ</span>
+<span class="w">    </span><span class="nx">title</span><span class="o">?:</span><span class="w"> </span><span class="o">&lt;</span><span class="kc">null</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Название документа</span>
+<span class="w">    </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Имя пользователя, создавшего документ</span>
+<span class="w">    </span><span class="nx">version</span><span class="o">?:</span><span class="w"> </span><span class="o">&lt;</span><span class="kc">null</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Версия генератора, использованного для создания документа</span>
+<span class="w">  </span><span class="p">};</span>
+<span class="w">  </span><span class="nx">options</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">skip_save</span><span class="o">?:</span><span class="w"> </span><span class="o">&lt;</span><span class="kc">null</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">boolean</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Пропустить сохранение</span>
+<span class="w">  </span><span class="p">};</span>
+<span class="p">};</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">[</span><span class="nx">Mutations</span><span class="p">.</span><span class="nx">Agreements</span><span class="p">.</span><span class="nx">GenerateUserAgreement</span><span class="p">.</span><span class="nx">name</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">Mutation</span><span class="p">(</span>
+<span class="w">  </span><span class="nx">Mutations</span><span class="p">.</span><span class="nx">Agreements</span><span class="p">.</span><span class="nx">GenerateUserAgreement</span><span class="p">.</span><span class="nx">mutation</span><span class="p">,</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">variables</span><span class="w"> </span><span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div>
 <p>В ответ <code>MONO</code> формирует документ:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nx">IGeneratedDocument</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">binary</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w">      </span><span class="c1">// base64-кодированное содержимое PDF</span>
@@ -1823,24 +1916,138 @@
 <span class="w">  </span><span class="nx">meta</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">MetaDocument</span><span class="o">&gt;</span><span class="w">  </span><span class="c1">// Объект метаданных</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><code>2. Подпись документа</code></p>
-<p>На полученный <code>hash</code> документ пользователь накладывает цифровую подпись с помощью своего приватного ключа:</p>
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Wallet</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@coopenomics/sdk&#39;</span>
+<h3 id="_5">Подпись документа<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>На полученный <code>hash</code> документ пользователь накладывает цифровую подпись с помощью своего приватного ключа в классе Document</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Classes</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@coopenomics/sdk&#39;</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">wallet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Wallet</span><span class="p">({</span>
-<span class="w">  </span><span class="nx">chain_url</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="c1">// конечная точка блокчейна</span>
-<span class="w">  </span><span class="nx">chain_id</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="c1">// идентификатор блокчейна</span>
-<span class="p">})</span>
+<span class="c1">//создать фабрику и установить ключ для подписи</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">documentFactory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Classes</span><span class="p">.</span><span class="nx">Document</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">wif</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span>
 
-<span class="nx">wallet</span><span class="p">.</span><span class="nx">setWif</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">username</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">wif</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="c1">//установить имя пользователя и приватный ключ для подписи</span>
-
-<span class="c1">//подписать документ</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">signedDocument</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">signDocument</span><span class="p">(</span><span class="nx">generatedDocument</span><span class="p">)</span>
+<span class="c1">//подписать ранее сгенерированный документ</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">signedDocument</span><span class="o">:</span><span class="w"> </span><span class="kt">ISignedDocument</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">documentFactory</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">generatedDocument</span><span class="p">)</span>
 </code></pre></div>
-<p><code>3. Публикация в блокчейне</code></p>
-<p>Пользователь вызывает «публикующую» мутацию <code>MONO</code> и передаёт подписанный документ в качестве аргумента. <code>MONO</code> производит необходимые проверки, после чего, публикует документ в блокчейне. </p>
-<p>В результате, публичные данные документа (хэш, подпись, публичный ключ и мета-данные) фиксируются в блокчейне, а кооперативный смарт-контракт, который связан с опубликованным документом, продолжает своё исполнение по ходу своей бизнес-логики. </p>
-<h2 id="_4">Пакет документов<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>Также вместо создания новой фабрики документов, можно использовать фабрику из ранее созданного клиента:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">//устанавливаем ключ, если ранее вход в клиенте с помощью login не исполнялся</span>
+<span class="nx">client</span><span class="p">.</span><span class="nb">document</span><span class="p">.</span><span class="nx">setWif</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">wif</span><span class="o">&gt;</span><span class="p">)</span>
+
+<span class="c1">//подписываем документ</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">signedDocument</span><span class="o">:</span><span class="w"> </span><span class="kt">ISignedDocument</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nb">document</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">generatedDocument</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition note">
+<p>Если экземпляр клиента ранее вызывал метод <code>client.login(...)</code> для входа, то класс <code>client.Document</code> уже содержит приватный ключ <code>wif</code> и может подписывать документы без повторной установки ключа. </p>
+</div>
+<p>В результате, будет получен объект с подписанным документом, пригодным к использованию в мутациях <code>MONO</code>. </p>
+<h3 id="_6">Публикация в блокчейне<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>Для отправки документа необходимо вызвать соответствующую ему мутацию <code>MONO</code> и передать подписанный документ в качестве аргумента. <code>MONO</code> произведет необходимые проверки и опубликует документ в блокчейне, вызвав соответствующий мутации кооперативный смарт-контракт. </p>
+<p>Например, в процессе <a href="/documentation/participants">регистрации пайщика</a> необходимо отправить сразу несколько сгенерированных и подписанных документов:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Mutations</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@coopenomics/sdk&#39;</span><span class="p">;</span><span class="w"> </span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">variables</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">privacy_agreement</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">hash</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Хэш документа</span>
+<span class="w">      </span><span class="nx">meta</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">block_num</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">number</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Номер блока, на котором был создан документ</span>
+<span class="w">        </span><span class="nx">coopname</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Название кооператива, связанное с документом</span>
+<span class="w">        </span><span class="nx">created_at</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Дата и время создания документа</span>
+<span class="w">        </span><span class="nx">generator</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Имя генератора, использованного для создания документа</span>
+<span class="w">        </span><span class="nx">lang</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Язык документа</span>
+<span class="w">        </span><span class="nx">links</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Ссылки, связанные с документом</span>
+<span class="w">        </span><span class="nx">registry_id</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">number</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// ID документа в реестре</span>
+<span class="w">        </span><span class="nx">timezone</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Часовой пояс, в котором был создан документ</span>
+<span class="w">        </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Название документа</span>
+<span class="w">        </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Имя пользователя, создавшего документ</span>
+<span class="w">        </span><span class="nx">version</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Версия генератора, использованного для создания документа</span>
+<span class="w">      </span><span class="p">};</span>
+<span class="w">      </span><span class="nx">public_key</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Публичный ключ документа</span>
+<span class="w">      </span><span class="nx">signature</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Подпись документа</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">    </span><span class="nx">signature_agreement</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">hash</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Хэш документа</span>
+<span class="w">      </span><span class="nx">meta</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">block_num</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">number</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Номер блока, на котором был создан документ</span>
+<span class="w">        </span><span class="nx">coopname</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Название кооператива, связанное с документом</span>
+<span class="w">        </span><span class="nx">created_at</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Дата и время создания документа</span>
+<span class="w">        </span><span class="nx">generator</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Имя генератора, использованного для создания документа</span>
+<span class="w">        </span><span class="nx">lang</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Язык документа</span>
+<span class="w">        </span><span class="nx">links</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Ссылки, связанные с документом</span>
+<span class="w">        </span><span class="nx">registry_id</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">number</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// ID документа в реестре</span>
+<span class="w">        </span><span class="nx">timezone</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Часовой пояс, в котором был создан документ</span>
+<span class="w">        </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Название документа</span>
+<span class="w">        </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Имя пользователя, создавшего документ</span>
+<span class="w">        </span><span class="nx">version</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Версия генератора, использованного для создания документа</span>
+<span class="w">      </span><span class="p">};</span>
+<span class="w">      </span><span class="nx">public_key</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Публичный ключ документа</span>
+<span class="w">      </span><span class="nx">signature</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Подпись документа</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">    </span><span class="nx">statement</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">hash</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Хэш документа</span>
+<span class="w">      </span><span class="nx">meta</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">block_num</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">number</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Номер блока, на котором был создан документ</span>
+<span class="w">        </span><span class="nx">braname</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Имя аккаунта кооперативного участка</span>
+<span class="w">        </span><span class="nx">coopname</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Название кооператива, связанное с документом</span>
+<span class="w">        </span><span class="nx">created_at</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Дата и время создания документа</span>
+<span class="w">        </span><span class="nx">generator</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Имя генератора, использованного для создания документа</span>
+<span class="w">        </span><span class="nx">lang</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Язык документа</span>
+<span class="w">        </span><span class="nx">links</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Ссылки, связанные с документом</span>
+<span class="w">        </span><span class="nx">registry_id</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">number</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// ID документа в реестре</span>
+<span class="w">        </span><span class="nx">signature</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Изображение собственноручной подписи (base-64)</span>
+<span class="w">        </span><span class="nx">skip_save</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">boolean</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Флаг пропуска сохранения документа (используется для предварительной генерации и демонстрации пользователю)</span>
+<span class="w">        </span><span class="nx">timezone</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Часовой пояс, в котором был создан документ</span>
+<span class="w">        </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Название документа</span>
+<span class="w">        </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Имя пользователя, создавшего документ</span>
+<span class="w">        </span><span class="nx">version</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Версия генератора, использованного для создания документа</span>
+<span class="w">      </span><span class="p">};</span>
+<span class="w">      </span><span class="nx">public_key</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Публичный ключ документа</span>
+<span class="w">      </span><span class="nx">signature</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Подпись документа</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">    </span><span class="nx">user_agreement</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">hash</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Хэш документа</span>
+<span class="w">      </span><span class="nx">meta</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">block_num</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">number</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Номер блока, на котором был создан документ</span>
+<span class="w">        </span><span class="nx">coopname</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Название кооператива, связанное с документом</span>
+<span class="w">        </span><span class="nx">created_at</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Дата и время создания документа</span>
+<span class="w">        </span><span class="nx">generator</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Имя генератора, использованного для создания документа</span>
+<span class="w">        </span><span class="nx">lang</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Язык документа</span>
+<span class="w">        </span><span class="nx">links</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Ссылки, связанные с документом</span>
+<span class="w">        </span><span class="nx">registry_id</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">number</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// ID документа в реестре</span>
+<span class="w">        </span><span class="nx">timezone</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Часовой пояс, в котором был создан документ</span>
+<span class="w">        </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Название документа</span>
+<span class="w">        </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Имя пользователя, создавшего документ</span>
+<span class="w">        </span><span class="nx">version</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Версия генератора, использованного для создания документа</span>
+<span class="w">      </span><span class="p">};</span>
+<span class="w">      </span><span class="nx">public_key</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Публичный ключ документа</span>
+<span class="w">      </span><span class="nx">signature</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Подпись документа</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">    </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Имя аккаунта пайщика</span>
+<span class="w">    </span><span class="nx">wallet_agreement</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">hash</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Хэш документа</span>
+<span class="w">      </span><span class="nx">meta</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">block_num</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">number</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Номер блока, на котором был создан документ</span>
+<span class="w">        </span><span class="nx">coopname</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Название кооператива, связанное с документом</span>
+<span class="w">        </span><span class="nx">created_at</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Дата и время создания документа</span>
+<span class="w">        </span><span class="nx">generator</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Имя генератора, использованного для создания документа</span>
+<span class="w">        </span><span class="nx">lang</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Язык документа</span>
+<span class="w">        </span><span class="nx">links</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Ссылки, связанные с документом</span>
+<span class="w">        </span><span class="nx">registry_id</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">number</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// ID документа в реестре</span>
+<span class="w">        </span><span class="nx">timezone</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Часовой пояс, в котором был создан документ</span>
+<span class="w">        </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Название документа</span>
+<span class="w">        </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Имя пользователя, создавшего документ</span>
+<span class="w">        </span><span class="nx">version</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Версия генератора, использованного для создания документа</span>
+<span class="w">      </span><span class="p">};</span>
+<span class="w">      </span><span class="nx">public_key</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Публичный ключ документа</span>
+<span class="w">      </span><span class="nx">signature</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Подпись документа</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">  </span><span class="p">};</span>
+<span class="p">};</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">[</span><span class="nx">Mutations</span><span class="p">.</span><span class="nx">Participants</span><span class="p">.</span><span class="nx">RegisterParticipant</span><span class="p">.</span><span class="nx">name</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">Mutation</span><span class="p">(</span>
+<span class="w">  </span><span class="nx">Mutations</span><span class="p">.</span><span class="nx">Participants</span><span class="p">.</span><span class="nx">RegisterParticipant</span><span class="p">.</span><span class="nx">mutation</span><span class="p">,</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">variables</span><span class="w"> </span><span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>В результате её исполнения, публичные данные документов (хэш, подпись, публичный ключ и мета-данные) зафиксируются в блокчейне, а кооперативный смарт-контракт регистрации продолжит своё исполнение по ходу своей бизнес-логики. </p>
+<h2 id="_7">Пакет документов<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>Пакет документов представляет собой набор всех документов, относящихся к определённому процессу внутри кооператива (например, вступление в кооператив, взнос или возврат имущества имущества, подписание соглашений и т.д.).</p>
 <p>Минимальный пакет всегда содержит хотя бы одно заявление (StatementDetail), опубликованное в блокчейне. В зависимости от бизнес-логики смарт-контракта, к заявлению могут добавляться и другие 
 документы:</p>
@@ -1881,7 +2088,7 @@
     L --&gt;|Содержит| NN["👤 Информацию о пайщике"]
 
 </code></pre>
-<h2 id="_5">Статусы документов<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_8">Статусы документов<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <p>При публикации в блокчейне каждый документ, в зависимости от контекста и бизнес-логики, получает статус:</p>
 <ul>
 <li>
@@ -1924,7 +2131,7 @@
 </li>
 </ul>
 <p>Благодаря этому подходу, платформа может регенерировать любой документ в том же виде, в котором он был подписан и отправлен в блокчейн, и сверить заново сгенерированный документ с тем, который был опубликован в блокчейне, тем самым, верифицировав то, что документ создан корректно, а цифровая подпись на нём - валидна. </p>
-<h2 id="_6">Связанные документы<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_9">Связанные документы<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <p>Часто к заявлению или другому документу требуется приложить дополнительные договоры, согласия, соглашения и прочие документы, которые, в свою очередь, могут быть подписаны и закреплены криптографически. Это делается путём добавления в поле <code>meta</code> списка (массива) хэш-сумм связанных документов. Подписывая один документ, пайщик тем самым подтверждает связь с другими документами и своё согласие с ними именно в той версии, с которой он ознакомлен.</p>
 <p>Пример: когда пользователь вступает в кооператив, он одновременно потверждает согласие с политикой конфиденциальности, условиями целевой программы «Цифрового Кошелька», а также правила использования простой электронной подписи и пользовательское соглашение. Хэши всех этих документов указываются в поле <code>meta</code> инициирующего заявления на вступление в кооператив, а подробное содержимое каждого документа хранится в базе <code>MONO</code>.</p>
 <p>В итоге, вся последовательность от первого инициирующего заявления до заключительного акта, если он предусмотрен бизнес-логикой, превращается в связный пакет документов:</p>
@@ -1950,7 +2157,7 @@
 </li>
 </ul>
 <p>Такой пакет становится частью списка всех «принятых» решений и документов кооператива, который в любой момент может быть выгружен для проведения аудита, юридических проверок или отчетности перед надзорными органами. </p>
-<h2 id="_7">Получить список пакетов документов<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_10">Получить список пакетов документов<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <p>🛠️ SDK: <a href="/sdk/modules/Queries.Documents.GetDocuments.html">Queries.Documents.GetDocuments</a> | 🔗 GraphQL API: <a href="/../graphql/index.html#query-getDocuments">Query.getDocuments</a></p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Queries</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@coopenomics/sdk&#39;</span><span class="p">;</span><span class="w"> </span>
 
@@ -2024,7 +2231,7 @@
 <span class="w">                </span><span class="nx">coopname</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Название кооператива, связанное с документом</span>
 <span class="w">                </span><span class="nx">created_at</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Дата и время создания документа</span>
 <span class="w">                </span><span class="nx">generator</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Имя генератора, использованного для создания документа</span>
-<span class="w">                </span><span class="nx">lang</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">ru</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Язык документа</span>
+<span class="w">                </span><span class="nx">lang</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Язык документа</span>
 <span class="w">                </span><span class="nx">links</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Ссылки, связанные с документом</span>
 <span class="w">                </span><span class="nx">registry_id</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">number</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// ID документа в реестре</span>
 <span class="w">                </span><span class="nx">timezone</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Часовой пояс, в котором был создан документ</span>
@@ -2158,7 +2365,7 @@
 <span class="w">              </span><span class="nx">coopname</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Название кооператива, связанное с документом</span>
 <span class="w">              </span><span class="nx">created_at</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Дата и время создания документа</span>
 <span class="w">              </span><span class="nx">generator</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Имя генератора, использованного для создания документа</span>
-<span class="w">              </span><span class="nx">lang</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">ru</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Язык документа</span>
+<span class="w">              </span><span class="nx">lang</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Язык документа</span>
 <span class="w">              </span><span class="nx">links</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Ссылки, связанные с документом</span>
 <span class="w">              </span><span class="nx">registry_id</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">number</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// ID документа в реестре</span>
 <span class="w">              </span><span class="nx">timezone</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Часовой пояс, в котором был создан документ</span>
