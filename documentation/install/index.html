@@ -12,7 +12,7 @@
         <link rel="prev" href="../sdk/">
       
       
-        <link rel="next" href="../connect/">
+        <link rel="next" href="../init/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -299,6 +299,23 @@
         </a>
       </li>
     
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../connect/" class="md-tabs__link">
+        
+  
+    
+  
+  Подключение
+
+      </a>
+    </li>
   
 
       
@@ -1258,11 +1275,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../connect/" class="md-nav__link">
+      <a href="../init/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Инициализация
+    Первый старт
   </span>
   
 
@@ -1580,6 +1597,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../connect/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Подключение
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../contacts/" class="md-nav__link">
         
   
@@ -1646,24 +1683,23 @@
 
   <h1>Установка</h1>
 
-<p>Полная установка <code>MONO</code> вам потребуется, если вы самостоятельно подключаетесь к <a href="https://coopenomics.world">Кооперативной Экономике</a> с использованием своего собственного сервера. Если же хостинг <code>MONO</code> осуществляется в ПК ВОСХОД для вашего кооператива, то установка и сервер вам не потребуется. </p>
+<p>Полная установка <code>MONO</code> вам потребуется, если вы самостоятельно подключаетесь к <a href="https://coopenomics.world">Кооперативной Экономике</a> с использованием своего собственного сервера. Если же хостинг <code>MONO</code> осуществляется в ПК ВОСХОД для вашего кооператива, то установка и сервер вам не потребуется - ПК ВОСХОД сделает всё за вас. </p>
 <h2 id="_1">Установка<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>Склонируйте репозиторий:</p>
-<div class="highlight"><pre><span></span><code>git clone https://github.com/coopenomics/mono
+<p>Склонируйте моно-репозиторий:</p>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/coopenomics/monocoop
 </code></pre></div>
 <p>Выполните установку пакетов:</p>
-<div class="highlight"><pre><span></span><code>cd mono
-pnpm install
+<div class="highlight"><pre><span></span><code>cd monocoop &amp;&amp; pnpm install
 </code></pre></div>
 <p>Скопируйте конфигурационный файл бэкенда:</p>
 <div class="highlight"><pre><span></span><code>cp components/coopback/.env-example components/coopback/.env
 </code></pre></div>
-<p>Скопируйте конфигурационный файл фронтенда:</p>
+<p>Конфигурационный файл фронтенда:</p>
 <div class="highlight"><pre><span></span><code>cp components/terminal/src/config/Env.ts components/terminal/src/config/Env.ts
 </code></pre></div>
-<p>Скопируйте конфигурационный файл парсера:
+<p>Конфигурационный файл парсера:</p>
 <div class="highlight"><pre><span></span><code>cp components/cooparser/.env-example components/cooparser/.env
-</code></pre></div></p>
+</code></pre></div>
 <p>Настройте переменные окружения во всех скопированных конфигурационных файлах. </p>
 <div class="admonition note">
 <p class="admonition-title">API блокчейна</p>
@@ -1672,10 +1708,10 @@ pnpm install
 <p>После конфигурации произведите сборку MONO из корня:</p>
 <div class="highlight"><pre><span></span><code>pnpm run build
 </code></pre></div>
-<p>И выполните запуск MONO:
+<p>И выполните запуск <code>MONO</code>:</p>
 <div class="highlight"><pre><span></span><code>pnpm run dev
-</code></pre></div></p>
-<p>После запуска приложение бэкенда будет доступно на localhost:2998, приложение фронтенда на localhost:3005. Парсер блокчейна начнёт обработку блоков и откроет свой API для извлечения исторических данных на localhost:4000. </p>
+</code></pre></div>
+<p>После запуска приложение бэкенда будет доступно на <code>localhost:2998</code>, приложение фронтенда на <code>localhost:3005</code>. Парсер блокчейна начнёт обработку блоков и откроет свой API для извлечения исторических данных на <code>localhost:4000</code>. </p>
 
 
 
@@ -1728,13 +1764,13 @@ pnpm install
         
         
           
-          <a href="../connect/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Инициализация">
+          <a href="../init/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Первый старт">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Вперед
               </span>
               <div class="md-ellipsis">
-                Инициализация
+                Первый старт
               </div>
             </div>
             <div class="md-footer__button md-icon">
