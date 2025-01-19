@@ -1896,7 +1896,6 @@
 <span class="w">      </span><span class="p">}</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Данные организации</span>
 <span class="w">    </span><span class="nx">public_key</span><span class="o">?:</span><span class="w"> </span><span class="o">&lt;</span><span class="kc">null</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Публичный ключ</span>
 <span class="w">    </span><span class="nx">referer</span><span class="o">?:</span><span class="w"> </span><span class="o">&lt;</span><span class="kc">null</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Имя аккаунта реферера</span>
-<span class="w">    </span><span class="nx">role</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">User</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Роль пользователя</span>
 <span class="w">    </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">AccountType</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Тип аккаунта</span>
 <span class="w">    </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Имя пользователя</span>
 <span class="w">  </span><span class="p">};</span>
@@ -1937,7 +1936,6 @@
 <span class="kd">const</span><span class="w"> </span><span class="nx">variables</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">data</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">role</span><span class="o">?:</span><span class="w"> </span><span class="o">&lt;</span><span class="kc">null</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">username</span><span class="o">?:</span><span class="w"> </span><span class="o">&lt;</span><span class="kc">null</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="w">  </span><span class="p">};</span>
 <span class="w">  </span><span class="nx">options</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">limit</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">number</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Количество элементов на странице</span>
@@ -2035,7 +2033,7 @@
 <p>Обновить аккаунт в системе провайдера. Обновление аккаунта пользователя производится по username. Мутация позволяет изменить приватные данные пользователя, а также, адрес электронной почты в MONO. Использовать мутацию может только председатель совета.</p>
 <h3 id="_8">Заменить ключ<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>🛠️ SDK: <a href="/sdk/modules/Mutations.Accounts.ResetKey.html">Mutations.Accounts.ResetKey</a> | 🔗 GraphQL API: <a href="/../graphql/index.html#mutation-resetKey">Mutation.resetKey</a></p>
-<p>Метод замены ключа. Вызывается пайщиком, для которого производится замена с передачей токена, 
+<p>Метод замены ключа. Вызывается пайщиком, для которого производится замена с передачей токена,
 который был отправлен ему на электронную почту после вызова мутации StartResetKey.</p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Mutations</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@coopenomics/sdk&#39;</span>
 
@@ -2052,10 +2050,10 @@
 <span class="w">   </span><span class="p">}</span>
 <span class="w"> </span><span class="p">);</span>
 </code></pre></div>
-<p>Метод производит замену ключа в блокчейне на переданный. 
-На текущий момент здесь не используется каких-либо дополнительных децентрализованных сценариев проверки. 
-Считаем, что если кооператив меняет ключ пайщика - значит ему так надо, т.к. обычно сейчас один пайщик с одним аккаунтом является членом только одного кооператива. </p>
-<p>Однако, в дальнейшем, при введении функционала "карты пайщика", которая сделает допустимым "быстрый вход" для пайщиков одного кооператива - в другой, система замены ключа будет требовать подтверждения нескольких кооперативов.<br />
+<p>Метод производит замену ключа в блокчейне на переданный.
+На текущий момент здесь не используется каких-либо дополнительных децентрализованных сценариев проверки.
+Считаем, что если кооператив меняет ключ пайщика - значит ему так надо, т.к. обычно сейчас один пайщик с одним аккаунтом является членом только одного кооператива.</p>
+<p>Однако, в дальнейшем, при введении функционала "карты пайщика", которая сделает допустимым "быстрый вход" для пайщиков одного кооператива - в другой, система замены ключа будет требовать подтверждения нескольких кооперативов.
 /** Заменить приватный ключ аккаунта</p>
 <!-- ## Удалить аккаунт
 🛠️ SDK: [Mutations.Accounts.RegisterAccount](/sdk/modules/Mutations.Accounts.RegisterAccount.html) | 🔗 GraphQL API: [Mutation.registerAccount](/../graphql/index.html#mutation-registerAccount)
