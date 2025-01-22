@@ -21,6 +21,8 @@ theme:
       accent: teal
   
   logo: assets/logo-white.png
+  icon:
+    repo: fontawesome/brands/github
 
   language: ru
   features:
@@ -132,10 +134,9 @@ nav:
     - Как это работает: documentation/howitworks.md
     - Архитектура: documentation/architecture.md
     - Язык API: documentation/graphql.md
-    - SDK-клиент: documentation/sdk.md
+    - Обзор SDK: documentation/sdk.md
     - Установка: documentation/install.md
-    - Подключение: documentation/connect.md
-    - Кооператив: documentation/system.md
+    - Первый старт: documentation/init.md
     - Аккаунты: documentation/accounts.md
     - Аудентификация: documentation/auth.md
     - Пайщики: documentation/participants.md
@@ -149,13 +150,14 @@ nav:
     - Кооперативные участки: documentation/branches.md
     - Фонды: documentation/funds.md
     - Расширения: documentation/extensions.md
+    - Системная информация: documentation/system.md
     
     # - 🔗 SDK Docs: /sdk
     # - 🔗 GraphQL-API Docs: /graphql
     # - Документы: documentation/registration.md
     # - Платежи: documentation/registration.md
     # - Пайщики: documentation/registration.md
-  # - Подключение: connect.md
+  - Подключение: connect.md
   - Контакты: contacts.md
   
  
