@@ -70,3 +70,9 @@
 .md-grid {
   max-width: none !important;
 }
+
+.sm-button {
+    font-size: 0.8rem; /* Уменьшенный текст */
+    padding: 5px 10px; /* Уменьшенные отступы */
+    border-radius: 4px; /* Радиус углов */
+}

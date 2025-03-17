@@ -339,7 +339,7 @@ def define_env(env):
         """
         Генерирует пример использования (запрос/мутация):
           import { Mutations } from '@coopenomics/sdk';
-          const variables = { ... };
+          const variables = Mutations.[namespaceVariable].[interfaceName];
           const { ... } = await client.Mutation(...);
 
         По умолчанию ищет interface_name="IInput".
@@ -373,11 +373,14 @@ def define_env(env):
         # Решаем, Mutation или Query
         operation_type = "Query" if root_namespace == "Queries" else "Mutation"
 
+        # Добавляем интерфейс для variables
+        interface_path = f"{root_namespace}.{'.'.join(namespace_path)}.{variable_name}.{interface_name}"
+
         ts_code = [
             "\n",
             "```typescript",
-            f"import {{ {root_namespace} }} from '@coopenomics/sdk'; \n",
-            "const variables = {",
+            f"import {{ {root_namespace} }} from '@coopenomics/sdk';\n",
+            f"const variables: {interface_path} = {{",  # Указываем интерфейс для переменной variables
             *interface_fields,
             "};\n",
             f"const {{ [{root_namespace}.{'.'.join(namespace_path)}.{variable_name}.name]: result }} = await client.{operation_type}(",

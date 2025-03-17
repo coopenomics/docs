@@ -29,4 +29,4 @@ mkdocs build
 
 # Возвращаемся в первоначальную директорию и публикуем документацию
 # cd "$BASE_PATH/doctrine" || exit
-pnpm publish
+pnpm run publish

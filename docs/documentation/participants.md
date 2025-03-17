@@ -66,34 +66,32 @@ sequenceDiagram
 
 <a id="pregeneration-applicaion"></a>
 #### Заявление на вступление
-{{ get_sdk_doc("Mutations", "Participants", "GenerateApplication") }} | {{ get_graphql_doc("Mutation.generateParticipantApplication") }}
+{{ get_sdk_doc("Mutations", "Participants", "GenerateParticipantApplication") }} | {{ get_graphql_doc("Mutation.generateParticipantApplication") }}
 
 Мутация для генерации заявления на вступление пайщика в кооператив вызывается с параметром signature, который может быть пустым для пред-генерации, или содержать png изображение подписи в кодировке base64 для основной генерации. Массив links будет пустым для пред-генерации, но обязательно должен содержать хэши 4-х соглашений для основной генерации.
 
-{{ get_typedoc_desc("Mutations.Participants.GenerateApplication") }}
-
-{{ get_typedoc_input("Mutations.Decisions.GenerateApplication") }}
+{{ get_typedoc_input("Mutations.Participants.GenerateParticipantApplication") }}
 
 
 #### Соглашение о ЦПП "Цифровой Кошелёк"
 {{ get_sdk_doc("Mutations", "Agreements", "GenerateWalletAgreement") }} | {{ get_graphql_doc("Mutation.generateWalletAgreement") }}
 
-{{ get_typedoc_desc("Mutations.Agreements.GenerateWalletAgreement") }}
+{{ get_typedoc_input("Mutations.Participants.GenerateParticipantApplication") }}
 
 #### Соглашение о простой электронной подписи
 {{ get_sdk_doc("Mutations", "Agreements", "GenerateSignatureAgreement") }} | {{ get_graphql_doc("Mutation.generateSignatureAgreement") }}
 
-{{ get_typedoc_desc("Mutations.Agreements.GenerateSignatureAgreement") }}
+{{ get_typedoc_input("Mutations.Participants.GenerateParticipantApplication") }}
 
 #### Пользовательское соглашение
 {{ get_sdk_doc("Mutations", "Agreements", "GenerateUserAgreement") }} | {{ get_graphql_doc("Mutation.generateUserAgreement") }}
 
-{{ get_typedoc_desc("Mutations.Agreements.GenerateUserAgreement") }}
+{{ get_typedoc_input("Mutations.Participants.GenerateParticipantApplication") }}
 
 #### Согласие с политикой конфиденциальности
 {{ get_sdk_doc("Mutations", "Agreements", "GeneratePrivacyAgreement") }} | {{ get_graphql_doc("Mutation.generatePrivacyAgreement") }}
 
-{{ get_typedoc_desc("Mutations.Agreements.GeneratePrivacyAgreement") }}
+{{ get_typedoc_input("Mutations.Participants.GenerateParticipantApplication") }}
 
 В результате предгенерации будет получены объекты с документами, которые могут быть продемонстрированы пользователю перед запросом его собственноручной подписи. Кроме того, предгенерация необходима, чтобы криптографически связать заявление на вступление с соглашениями на этапе основной генерации после получения собственноручной подписи. 
 
@@ -102,34 +100,31 @@ sequenceDiagram
 Для получения собственноручной подписи пользователя используется вспомогательный набор методов {{ get_sdk_doc("Methods", "Canvas") }}. Для начала процесса получения собственноручной подписи необходимо создать область для подписи с помощью `Canvas.createCanvas()`, передав `id` элемента `div`, в котором будет размещен `canvas`. 
 
 ```ts
-import { Methods } from '@coopenomics/sdk'
+import { Classes } from '@coopenomics/sdk'
 
-//создаём canvas в контейнере signature-area
-const container = document.getElementById('signature-area') as HTMLElement
-const { canvas, ctx } = Methods.Canvas.createCanvas(container, 500, 300)
+// Указываем контейнер, где будет размещён холст
+const container = document.getElementById('signature-container') as HTMLElement
+
+// Создаём экземпляр Canvas для работы с подписью
+const signatureCanvas = new Classes.Canvas(container, {
+  lineWidth: 5,
+  strokeStyle: '#000',
+})
+
 ```
 
-После чего, необходимо подписаться на события и вызывать методы для рисования:
+После завершения процесса собственноручной подписи, необходимо извлечь её и, при необходимости, очистить область:
 
 ```ts
+// Извлечение подписи в формате base64
+const signature = signatureCanvas.getSignature()
+console.log('Подпись в формате base64:', signature)
 
-//создаём объект состояния
-const drawingState: Methods.Canvas.DrawingState = { drawing: false, lastX: 0, lastY: 0 }
+// Очистка холста при необходимости
+signatureCanvas.clearCanvas()
 
-//подписка на нажатие
-canvas.addEventListener('mousedown', (e) => Methods.Canvas.startDrawing(e, canvas, drawingState))
-//подписка на движение
-canvas.addEventListener('mousemove', (e) => Methods.Canvas.draw(e, canvas, ctx, drawingState))
-//подписка на отжатие
-canvas.addEventListener('mouseup', () => Methods.Canvas.endDrawing(drawingState))
-``` 
-
-После завершения процесса собственноручной подписи, необходимо извлечь её методом {{ get_sdk_doc("Methods", "Canvas", "getSignature") }} и, при необходимости, очистить область с {{ get_sdk_doc("Methods", "Canvas", "clearCanvas") }}.
-
-```ts
-const signature = Methods.Canvas.getSignature(canvas)
-Methods.Canvas.clearCanvas(canvas, ctx)
-//console.log(signature) // "data:image/png;base64,iVBORw0..."
+// Освобождение ресурсов, если холст больше не нужен
+signatureCanvas.destroy()
 ```
 
 В результате, у вас будет строковое представление изображения собственноручной подписи пользователя, которое теперь необходимо использовать на основной генерации заявления на вступление в кооператив. 
@@ -166,18 +161,21 @@ const { [Mutations.Participants.GenerateApplication.name]: participantApplicatio
 
 Теперь у нас есть полный пакет документов: 4 соглашения с этапа пред-генерации и 1 заявление с предыдущего этапа, которое включает собственноручную подпись пользователя и хэш-ссылки на соглашения. 
 
-Теперь необходимо подписать все эти 5 документов. Цифровая подпись осуществляется методом класса {{ get_class_doc("Wallet", "signDocument") }}, активный инстанс которого есть в SDK-клиенте. Вы можете использовать `client.Wallet.signDocument(doc)` на действующем экземпляре клиента или создать новый экземпляр класса Wallet, импортировав его из SDK:
+Теперь необходимо подписать все эти 5 документов. Цифровая подпись осуществляется методом класса {{ get_class_doc("Document", "sign") }}, активный инстанс которого есть в SDK-клиенте. Вы можете использовать `client.Document.sign(doc)` на действующем экземпляре клиента или создать новый экземпляр класса Document, импортировав его из SDK:
 
 ```ts
-//или используем существующий инстанс кошелька в клиенте
-client.Wallet.setWif(username, wif)
+
+const wif = <приватный ключ>
+
+//устанавливаем ключ в клиента, если необходимо
+client.Document.setWif(wif)
 
 //последовательно подписываем все документы:
-const signedSignatureAgreement = client.Wallet.signDocument(signatureAgreement)
-const signedUserAgreement = client.Wallet.signDocument(userAgreement)
-const signedWalletAgreement = client.Wallet.signDocument(walletAgreement)
-const signedPrivacyAgreement = client.Wallet.signDocument(privacyAgreement)
-const signedParticipantApplication = client.Wallet.signDocument(participantApplication2)
+const signedSignatureAgreement = client.Document.sign(signatureAgreement)
+const signedUserAgreement = client.Document.sign(userAgreement)
+const signedWalletAgreement = client.Document.sign(walletAgreement)
+const signedPrivacyAgreement = client.Document.sign(privacyAgreement)
+const signedParticipantApplication = client.Document.sign(participantApplication2)
 ```
 
 Для успешной подписи документов в SDK-клиенте должен быть [установлен](/documentation/auth/#about-auth) приватный ключ. В результате, каждый документ будет подписан подготовлен к отправке приведением к необходимому формату. 
@@ -193,11 +191,15 @@ const signedParticipantApplication = client.Wallet.signDocument(participantAppli
 
 ### 7. Оплата взносов
 
-{{ get_sdk_doc("Mutations", "Payments", "CreateInitial") }} | {{ get_graphql_doc("Mutation.createInitial") }}
+{{ get_sdk_doc("Mutations", "Payments", "CreateInitialPayment") }} | {{ get_graphql_doc("Mutation.createInitialPayment") }}
 
 Перед тем, как принятые документы будут отправлены в повестку совета на голосование, новому пайщику необходимо оплатить вступительный и минимальный паевый взносы (одним платежом). 
 
-{{ get_typedoc_desc("Mutations.Payments.CreateInitial") }}
+{{ get_typedoc_input("Mutations.Payments.CreateInitialPayment") }}
+
+Результат:
+
+{{ get_typedoc_definition("Mutations.Payments.CreateInitialPayment", "IOutput") }}
 
 Подробнее о доступных платежных провайдерах и управлении платежами смотри раздел [Платежи](/documentation/payments). После получения подтверждения о поступлении платежа (статус платежа `PAID`), пользователю будет зарегистрирован аккаунт в блокчейне, а пакет документов пайщика поставлен в повестку голосования совета кооператива.
 
@@ -218,7 +220,12 @@ const signedParticipantApplication = client.Wallet.signDocument(participantAppli
     Данная мутация должна использоваться `ТОГДА И ТОЛЬКО ТОГДА`, когда решение совета кооператива уже принято и оформлено в `бумажном` протоколе, а пайщик фактически совершил взносы в кооператив. Т.е. юридически пользователь уже является пайщиком кооператива и его необходимо только добавить в систему, переведя взаимоотношения с ним в цифровую форму. 
     <!-- Использование данной мутации без наличия `бумажного` протокола решения собрания совета и оплаченных взносов пайщика, может привести к аннулированию им всех операций на платформе через суд.  -->
 
-{{ get_typedoc_desc("Mutations.Participants.AddParticipant") }}
+{{ get_typedoc_input("Mutations.Participants.AddParticipant") }}
+
+Результат:
+
+{{ get_typedoc_definition("Mutations.Participants.AddParticipant", "IOutput") }}
+
 
 В результате исполнения мутации, пайщик будет добавлен в кооператив, а ему на электронную почту выслано приглашение на получение приватного ключа доступа к системе. Воспользовавшись им, он сможет войти в систему. 
 
