@@ -1215,6 +1215,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -1243,6 +1245,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1251,9 +1255,51 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Установка
+      Быстрый старт
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      Для фронтенд-разработки
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Для фуллстек-разработки
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Для фуллстек-разработки">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Рабочий цикл
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Для использования
     </span>
   </a>
   
@@ -1647,6 +1693,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1655,9 +1703,51 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Установка
+      Быстрый старт
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      Для фронтенд-разработки
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Для фуллстек-разработки
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Для фуллстек-разработки">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Рабочий цикл
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Для использования
     </span>
   </a>
   
@@ -1681,37 +1771,72 @@
   
 
 
-  <h1>Установка</h1>
-
-<p>Полная установка <code>MONO</code> вам потребуется, если вы самостоятельно подключаетесь к <a href="https://coopenomics.world">Кооперативной Экономике</a> с использованием своего собственного сервера. Если же хостинг <code>MONO</code> осуществляется в ПК ВОСХОД для вашего кооператива, то установка и сервер вам не потребуется - ПК ВОСХОД сделает всё за вас. </p>
-<h2 id="_1">Установка<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>Склонируйте моно-репозиторий:</p>
-<div class="highlight"><pre><span></span><code>git clone https://github.com/coopenomics/monocoop
+<h1 id="_1">Установка<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">Быстрый старт<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Самый быстрый и удобный способ установки блокчейна - воспользоваться подготовленным скриптом, который запустит докер-контейнер и произведет его конфигурацию для начала работы.   </p>
+<p>Для запуска вам потребуется установленный и запущенный Docker. Воспользуйтесь инструкцией по установке с официального сайта для вашей операционной системы: https://www.docker.com/products/docker-desktop/</p>
+<p>После установки Docker, клонируем моно-репозиторий системных контрактов и установщика блокчейна:</p>
+<div class="copy annotate highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/coopenomics/mono
 </code></pre></div>
-<p>Выполните установку пакетов:</p>
-<div class="highlight"><pre><span></span><code>cd monocoop &amp;&amp; pnpm install
+<p>Переходим в репозиторий установщика:</p>
+<div class="copy annotate highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>mono
 </code></pre></div>
-<p>Скопируйте конфигурационный файл бэкенда:</p>
-<div class="highlight"><pre><span></span><code>cp components/coopback/.env-example components/coopback/.env
+<p>Запускаем установку:
+<div class="copy annotate highlight"><pre><span></span><code>pnpm<span class="w"> </span>install
+</code></pre></div></p>
+<p>Также перед продолжением необходимо установить фабрику документов <code>weasyprint</code> для вашей операционной системы: https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#installation</p>
+<h2 id="-">Для фронтенд-разработки<a class="headerlink" href="#-" title="Permanent link">&para;</a></h2>
+<p>Не требует запущенного блокчейна и его бэкенда локально. Подключение осуществляется к блокчейну осуществляется через <code>testnet-api.coopenomics.world</code> и бэкенду кооператива через <code>testnet.coopenomics.world/backend/api</code>. </p>
+<p>Для запуска необходимо произвести конфигурацию, выбрав режим фронтенд-разработчика.</p>
+<div class="copy annotate highlight"><pre><span></span><code>pnpm<span class="w"> </span>run<span class="w"> </span>setup
 </code></pre></div>
-<p>Конфигурационный файл фронтенда:</p>
-<div class="highlight"><pre><span></span><code>cp components/terminal/src/config/Env.ts components/terminal/src/config/Env.ts
-</code></pre></div>
-<p>Конфигурационный файл парсера:</p>
-<div class="highlight"><pre><span></span><code>cp components/cooparser/.env-example components/cooparser/.env
-</code></pre></div>
-<p>Настройте переменные окружения во всех скопированных конфигурационных файлах. </p>
-<div class="admonition note">
-<p class="admonition-title">API блокчейна</p>
-<p>При подключении к тестовой среде использовать следующие конечные точки блокчейна: https://api-testnet.coopenomics.world, при работе с производственной сетью: https://api.coopenomics.world</p>
+<p>После конфигурации осуществляем запуск фронтенда:
+<div class="copy annotate highlight"><pre><span></span><code>pnpm<span class="w"> </span>run<span class="w"> </span>dev:desktop
+</code></pre></div></p>
+<p>Фронтенд запустится на 3005 порту и подключится к тестовому кооперативу. Для входа можно использовать следующие данные:</p>
+<div class="admonition warn">
+<p><strong>Почта</strong>: chairman.voskhod@gmail.com</p>
+<p><strong>Ключ</strong>: 5Hs46kBWGMKnsqntqLCinp6QSCuuWkc39DLMzaNaUjv3TFLif2U</p>
 </div>
-<p>После конфигурации произведите сборку MONO из корня:</p>
-<div class="highlight"><pre><span></span><code>pnpm run build
+<h2 id="-_1">Для фуллстек-разработки<a class="headerlink" href="#-_1" title="Permanent link">&para;</a></h2>
+<p>Нам потребуется инфраструктура - базы данных mongo, postgres, а также локально установленный и запущенный в производство блоков контейнер блокчейна. Все они поднимаются одной командой:</p>
+<div class="copy annotate highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
 </code></pre></div>
-<p>И выполните запуск <code>MONO</code>:</p>
-<div class="highlight"><pre><span></span><code>pnpm run dev
+<p>После запуска инфраструктуры необходимо произвести конфигурацию для фуллстек разработчика:
+<div class="copy annotate highlight"><pre><span></span><code>pnpm<span class="w"> </span>run<span class="w"> </span>setup
+</code></pre></div></p>
+<p>Команда произведет сборку всех компонент и смарт-контрактов.</p>
+<p>Теперь, нам необходимо запустить установку смарт-контрактов в блокчейн и конфигурацию локального окружения:</p>
+<div class="copy annotate highlight"><pre><span></span><code>pnpm<span class="w"> </span>run<span class="w"> </span>boot
 </code></pre></div>
-<p>После запуска приложение бэкенда будет доступно на <code>localhost:2998</code>, приложение фронтенда на <code>localhost:3005</code>. Парсер блокчейна начнёт обработку блоков и откроет свой API для извлечения исторических данных на <code>localhost:4000</code>. </p>
+<p>Команда boot запускает последовательный процесс полной установки всех смарт-контрактов и необходимых записей в базы данных для полностью локальной работы с системой. </p>
+<p>Запуск фронтенда:
+<div class="copy annotate highlight"><pre><span></span><code>pnpm<span class="w"> </span>run<span class="w"> </span>dev:desktop
+</code></pre></div></p>
+<p>Фронтенд будет запущен на 3005 порту.</p>
+<p>Запуск бэкенда:
+<div class="copy annotate highlight"><pre><span></span><code>pnpm<span class="w"> </span>run<span class="w"> </span>dev:backend
+</code></pre></div></p>
+<p>После запуска воспользуйтесь данными для входа на localhost:3005:</p>
+<div class="admonition warn">
+<p><strong>Почта</strong>: ivanov@example.com</p>
+<p><strong>Ключ</strong>: 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3</p>
+</div>
+<p>Блокчейн открывает API на 8888 порту запросов и транзакций, 8080 для ws-соединений, 9876 для p2p-синронизации между нодами.</p>
+<p>Бэкенд открывает API на 2998 порту и предоставляет GraphQL-API на localhost:2998/v1/graphql, а также на 4000 порту для извлечения исторических данных блокчейна. </p>
+<h3 id="_3">Рабочий цикл<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>В случае, если в процессе установки возникли сбои, или требуется в рамках производственного процесса полностью перезапустить систему с нуля, то необходимо остановить, очистить данные и вновь запустить контейнер блокчейна командой:</p>
+<div class="copy annotate highlight"><pre><span></span><code>pnpm<span class="w"> </span>run<span class="w"> </span>clear
+</code></pre></div>
+<p>После чего вновь произвести загрузку смарт-контрактов:</p>
+<div class="copy annotate highlight"><pre><span></span><code>pnpm<span class="w"> </span>run<span class="w"> </span>boot
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">ВАЖНО!</p>
+<p>В момент перезапуска все бэкенд-сервисы должен быть полностью отключены.</p>
+</div>
+<h2 id="_4">Для использования<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>При запуске для продакшн-использования запуск осуществляется аналогично режимам для разработчиков, но с заменой тестовых-общедоступных переменных окружения всех компонент - на реальные. </p>
 
 
 
